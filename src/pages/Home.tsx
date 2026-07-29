@@ -3,6 +3,9 @@ import Carousel from '../components/ui/Carousel'
 import ContentCard from '../components/ui/ContentCard'
 import VerticalPosterCard from '../components/ui/VerticalPosterCard'
 import ExperienceCard from '../components/ui/ExperienceCard'
+import PartnersSection from '../components/ui/PartnersSection'
+import NewsroomSection from '../components/ui/NewsroomSection'
+import NewsletterSection from '../components/ui/NewsletterSection'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -256,12 +259,12 @@ const Home = () => {
         {/* Blue SVG Background */}
         <div className="absolute top-35 inset-0 z-0 pointer-events-none opacity-60 flex items-center justify-center">
           <svg width="100%" height="100%" viewBox="0 0 1440 1172" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path fillRule="evenodd" clipRule="evenodd" d="M1394.73 1124.38C1394.73 1124.38 1155.82 1011.63 900.817 1189.66C645.812 1367.68 584.953 926.771 389.047 926.771C193.14 926.771 86.5106 1124.38 86.5106 1124.38L0 320.594C0 320.594 71.6731 193.009 318.379 31.3019C565.086 -130.405 787.146 387.057 1000.66 387.057C1214.17 387.057 1440 4.00464 1440 4.00464L1394.73 1124.38Z" fill="#1A237E" fillOpacity="0.3"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M1394.73 1124.38C1394.73 1124.38 1155.82 1011.63 900.817 1189.66C645.812 1367.68 584.953 926.771 389.047 926.771C193.14 926.771 86.5106 1124.38 86.5106 1124.38L0 320.594C0 320.594 71.6731 193.009 318.379 31.3019C565.086 -130.405 787.146 387.057 1000.66 387.057C1214.17 387.057 1440 4.00464 1440 4.00464L1394.73 1124.38Z" fill="#1A237E" fillOpacity="0.3" />
           </svg>
         </div>
 
         <div className="relative z-10 mx-[10%] flex flex-col gap-32">
-          
+
           {/* Creative Technology & AI */}
           <div className="flex flex-col text-center items-center text-white">
             <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">Creative Technology & AI</p>
@@ -275,15 +278,15 @@ const Home = () => {
               <button className="border border-white/30 text-white text-sm font-semibold py-3 px-8 rounded-md hover:bg-white/10 transition-colors">
                 Explore Innovation
               </button>
-              
+
               {/* Navigation Arrows for this carousel */}
               <div className="hidden md:flex absolute right-0 gap-4">
-                 <button className="tech-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                 </button>
-                 <button className="tech-next w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                 </button>
+                <button className="tech-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+                </button>
+                <button className="tech-next w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </button>
               </div>
             </div>
 
@@ -336,10 +339,10 @@ const Home = () => {
             </div>
 
             <div className="flex-1 w-full relative">
-              <img 
-                src="/DEYMAKE_IMG.png" 
-                alt="DeyMake Platform" 
-                className="w-[700px] mx-auto object-contain drop-shadow-2xl" 
+              <img
+                src="/DEYMAKE_IMG.png"
+                alt="DeyMake Platform"
+                className="w-[700px] mx-auto object-contain drop-shadow-2xl"
               />
             </div>
           </div>
@@ -349,8 +352,8 @@ const Home = () => {
 
       {/* Impact Section */}
       <div className="relative w-full overflow-hidden bg-[#303030] pt-16 pb-32">
-        <div className="relative z-10 mx-[10%] px-6 md:px-12 flex flex-col gap-16">
-          
+        <div className="relative z-10 mx-[10%]  flex flex-col gap-16">
+
           <div className="flex flex-col text-center items-center text-white max-w-3xl mx-auto">
             <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">Impact</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Creating Value Beyond Content</h2>
@@ -364,12 +367,12 @@ const Home = () => {
               <div className="flex-1"></div>
               <p className="text-white/80 text-sm font-medium">Areas of Impact</p>
               <div className="flex-1 hidden md:flex justify-end gap-4">
-                 <button className="impact-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                 </button>
-                 <button className="impact-next w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                 </button>
+                <button className="impact-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+                </button>
+                <button className="impact-next w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </button>
               </div>
             </div>
 
@@ -414,15 +417,29 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Partners & Newsletter Sections */}
+      <div className='relative bg-[#303030]'>   
+          <div className="z-10 absolute top-35 inset-0  pointer-events-none  flex items-center justify-center">
+     <svg width="100%" height="100%" viewBox="0 0 1440 1450" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path fillRule="evenodd" clipRule="evenodd" d="M1453.96 1391.79C1453.96 1391.79 1195.14 1252.22 918.885 1472.59C642.63 1692.95 576.699 1147.18 364.467 1147.18C152.235 1147.18 36.72 1391.79 36.72 1391.79L-57 396.839C-57 396.839 20.6459 238.911 287.911 38.7463C555.176 -161.418 795.742 479.108 1027.04 479.108C1258.35 479.108 1503 4.95703 1503 4.95703L1453.96 1391.79Z" fill="#44BB3D" fillOpacity="0.3" />
+          </svg>
+
+        </div>
+        <PartnersSection />
+        <NewsroomSection />
+        <NewsletterSection />
+      </div>
+
+
       {/* Let's Build The Future Together Section */}
       <div className="relative w-full overflow-hidden bg-[#303030] py-10">
-        <div className="relative z-10 mx-[10%] px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16">
-          
+        <div className="relative z-10 mx-[10%] flex flex-col lg:flex-row items-center gap-16">
+
           {/* Left Image */}
           <div className="flex-1 w-full">
-            <img 
-              src="/BUILDFUTURE_IMG.png" 
-              alt="Let's build the future together" 
+            <img
+              src="/BUILDFUTURE_IMG.png"
+              alt="Let's build the future together"
               className="w-full h-auto rounded-3xl drop-shadow-2xl object-cover"
             />
           </div>
@@ -433,7 +450,7 @@ const Home = () => {
             <p className="text-white/80 leading-relaxed mb-10 text-[17px] max-w-xl">
               Whether you're looking to create a production, design an experience, build a platform or explore new possibilities through storytelling and technology, we'd love to hear from you.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-[#44BB3D] text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-[#3ca336] transition-colors shadow-lg shadow-[#44BB3D]/20">
                 Start a Conversation
