@@ -3,7 +3,7 @@ import React from 'react'
 export interface ContentCardProps {
   category: string
   title: string
-  description: string
+  description: string | React.ReactNode
   buttonText?: string
   image: string
 }

@@ -1,12 +1,27 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
+import About from './pages/About'
+import StoryWorlds from './pages/StoryWorlds'
+import Experiences from './pages/Experiences'
+import Platforms from './pages/Platforms'
+import AiCreativeLab from './pages/AiCreativeLab'
 
 const App = () => {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/story-worlds" element={<StoryWorlds />} />
+          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/platforms" element={<Platforms />} />
+          <Route path="/ai-creative-lab" element={<AiCreativeLab />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
 

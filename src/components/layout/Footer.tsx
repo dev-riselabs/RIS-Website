@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="relative w-full overflow-hidden bg-[#303030] pt-40 pb-12 text-white">
+    <footer className="relative w-full overflow-hidden bg-surface pt-40 pb-12 text-white">
       {/* SVG Background Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <svg width="100%" height="100%" viewBox="0 0 1440 1064" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -44,10 +45,10 @@ const Footer = () => {
           <h3 className="font-bold text-lg text-white">Quick Links</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-[13px] text-white/80">
             <div className="flex flex-col gap-4">
-              <a href="#" className="hover:text-white transition-colors">Welcome</a>
-              <a href="#" className="hover:text-white transition-colors">Our Story</a>
-              <a href="#" className="hover:text-white transition-colors">Vision</a>
-              <a href="#" className="hover:text-white transition-colors">Leadership</a>
+              <Link to="/" className="hover:text-white transition-colors">Welcome</Link>
+              <Link to="/about" className="hover:text-white transition-colors">Our Story</Link>
+              <Link to="/about" className="hover:text-white transition-colors">Vision</Link>
+              <Link to="/about" className="hover:text-white transition-colors">Leadership</Link>
             </div>
             <div className="flex flex-col gap-4">
               <a href="#" className="hover:text-white transition-colors">Original Series</a>

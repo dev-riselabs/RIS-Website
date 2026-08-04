@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ChevronDown = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 mt-0.5">
@@ -18,22 +19,22 @@ const NavBar = () => {
       <div className=" flex justify-center">
         <ul className="flex space-x-10 items-center font-medium text-sm">
           <li>
-            <a href="#" className="text-primary hover:opacity-80 transition-opacity">Welcome</a>
+            <Link to="/" className="text-primary hover:opacity-80 transition-opacity">Welcome</Link>
           </li>
           <li>
-            <a href="#" className="flex items-center hover:opacity-80 transition-opacity">About <ChevronDown /></a>
+            <Link to="/about" className="flex items-center hover:opacity-80 transition-opacity">About <ChevronDown /></Link>
           </li>
         <li>
-          <a href="#" className="flex items-center hover:opacity-80 transition-opacity">Story Worlds <ChevronDown /></a>
+          <Link to="/story-worlds" className="flex items-center hover:opacity-80 transition-opacity">Story Worlds <ChevronDown /></Link>
         </li>
         <li>
-          <a href="#" className="flex items-center hover:opacity-80 transition-opacity">Experiences <ChevronDown /></a>
+          <Link to="/experiences" className="flex items-center hover:opacity-80 transition-opacity">Experiences <ChevronDown /></Link>
         </li>
         <li>
-          <a href="#" className="flex items-center hover:opacity-80 transition-opacity">Platforms <ChevronDown /></a>
+          <Link to="/platforms" className="flex items-center hover:opacity-80 transition-opacity">Platforms <ChevronDown /></Link>
         </li>
         <li>
-          <a href="#" className="flex items-center hover:opacity-80 transition-opacity">AI Creative Lab <ChevronDown /></a>
+          <Link to="/ai-creative-lab" className="flex items-center hover:opacity-80 transition-opacity">AI Creative Lab <ChevronDown /></Link>
         </li>
         <li>
           <a href="#" className="hover:opacity-80 transition-opacity">Impact</a>

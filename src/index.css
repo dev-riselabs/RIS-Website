@@ -5,11 +5,46 @@
 @theme {
   --color-*: initial;
   --color-primary: #44BB3D;
+  --color-primary-hover: #3ca336;
+  --color-primary-dark: #3A503A;
   --color-white: #FFFFFF;
   --color-danger: #cc0000;
-  --color-surface: #382c2a;
+  
+  /* Surface Colors */
+  --color-surface: #303030;
   --color-surface-light: rgba(255, 255, 255, 0.1);
+  --color-surface-header: #333333;
+  --color-surface-mid: #292929;
+  --color-surface-dark: #242424;
+  
+  /* Text */
   --color-text-secondary: rgba(255, 255, 255, 0.8);
+  
+  /* Accent Colors */
+  --color-accent-blue: #1A237E;
+  --color-accent-blue-dark: #394285;
+  --color-accent-blue-bright: #0088FF;
+  --color-accent-blue-alt: #0A88FF;
+  
+  --color-accent-purple: #9F5BFF;
+  --color-accent-magenta: #C535DE;
+  --color-accent-magenta-light: #C834ED;
+  
+  --color-accent-pink: #FF3458;
+  --color-accent-pink-alt: #C63E6F;
+  
+  --color-accent-orange: #FF9533;
+  --color-accent-orange-alt: #E59835;
+  
+  --color-accent-yellow: #FFC000;
+  
+  --color-accent-cyan: #00D2ED;
+  
+  --color-accent-brown: #AC8467;
+  
+  --color-accent-green: #3ED857;
+  --color-accent-green-alt: #3CB855;
+  
   --font-sans: 'Jost', sans-serif;
 }
 

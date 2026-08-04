@@ -22,7 +22,7 @@ const PlayIcon = () => (
 const Home = () => {
   return (
     <>
-      <div className="bg-[#303030] min-h-screen pb-20">
+      <div className="bg-surface min-h-screen pb-20">
         {/* Hero Section */}
         <div className="relative w-full text-white flex flex-col">
           {/* Background Image containing the built-in arc */}
@@ -79,7 +79,7 @@ const Home = () => {
           </Carousel>
         </div>
       </div>
-      <div className="relative w-full overflow-hidden \pt-12 bg-[#303030]">
+      <div className="relative w-full overflow-hidden \pt-12 bg-surface">
         {/* Green SVG Background */}
         <div className="absolute inset-0 top-60 z-0 pointer-events-none">
           <svg width="100%" height="100%" viewBox="0 0 1440 1450" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -134,10 +134,10 @@ const Home = () => {
 
               {/* Navigation Arrows */}
               <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 flex gap-6 z-10">
-                <button className="stories-prev w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#303030] transition-colors cursor-pointer disabled:opacity-50">
+                <button className="stories-prev w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                 </button>
-                <button className="stories-next w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#303030] transition-colors cursor-pointer disabled:opacity-50">
+                <button className="stories-next w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                 </button>
               </div>
@@ -224,7 +224,7 @@ const Home = () => {
         </div>
       </div>
       {/* Humachines Creative Challenge Block */}
-      <div className="flex flex-col lg:flex-row gap-16 items-center  w-full  py-10 bg-[#303030]">
+      <div className="flex flex-col lg:flex-row gap-16 items-center  w-full  py-10 bg-surface">
 
         {/* Left Image */}
         <div className="flex-1 w-full relative flex justify-center items-center">
@@ -243,7 +243,7 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#44BB3D] text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-[#3ca336] transition-colors shadow-lg shadow-[#44BB3D]/20">
+            <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
               Learn More
             </button>
             <button className="border border-white/50 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">
@@ -255,7 +255,7 @@ const Home = () => {
       </div>
 
       {/* Creative Technology & AI + Platforms Section */}
-      <div className="relative w-full overflow-hidden bg-[#303030] pt-24 pb-32">
+      <div className="relative w-full overflow-hidden bg-surface pt-24 pb-32">
         {/* Blue SVG Background */}
         <div className="absolute top-35 inset-0 z-0 pointer-events-none opacity-60 flex items-center justify-center">
           <svg width="100%" height="100%" viewBox="0 0 1440 1172" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -351,7 +351,7 @@ const Home = () => {
       </div>
 
       {/* Impact Section */}
-      <div className="relative w-full overflow-hidden bg-[#303030] pt-16 pb-32">
+      <div className="relative w-full overflow-hidden bg-surface pt-16 pb-32">
         <div className="relative z-10 mx-[10%]  flex flex-col gap-16">
 
           <div className="flex flex-col text-center items-center text-white max-w-3xl mx-auto">
@@ -418,7 +418,7 @@ const Home = () => {
       </div>
 
       {/* Partners & Newsletter Sections */}
-      <div className='relative bg-[#303030]'>   
+      <div className='relative bg-surface'>   
           <div className="z-10 absolute top-35 inset-0  pointer-events-none  flex items-center justify-center">
      <svg width="100%" height="100%" viewBox="0 0 1440 1450" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path fillRule="evenodd" clipRule="evenodd" d="M1453.96 1391.79C1453.96 1391.79 1195.14 1252.22 918.885 1472.59C642.63 1692.95 576.699 1147.18 364.467 1147.18C152.235 1147.18 36.72 1391.79 36.72 1391.79L-57 396.839C-57 396.839 20.6459 238.911 287.911 38.7463C555.176 -161.418 795.742 479.108 1027.04 479.108C1258.35 479.108 1503 4.95703 1503 4.95703L1453.96 1391.79Z" fill="#44BB3D" fillOpacity="0.3" />
@@ -432,7 +432,7 @@ const Home = () => {
 
 
       {/* Let's Build The Future Together Section */}
-      <div className="relative w-full overflow-hidden bg-[#303030] py-10">
+      <div className="relative w-full overflow-hidden bg-surface py-10">
         <div className="relative z-10 mx-[10%] flex flex-col lg:flex-row items-center gap-16">
 
           {/* Left Image */}
@@ -452,7 +452,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#44BB3D] text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-[#3ca336] transition-colors shadow-lg shadow-[#44BB3D]/20">
+              <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
                 Start a Conversation
               </button>
               <button className="border border-white/30 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">

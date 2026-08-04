@@ -2,7 +2,7 @@ import React from 'react';
 
 const PartnersSection = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-[#303030] py-28">
+    <div className="relative w-full overflow-hidden bg-surface py-28">
       {/* First SVG Background */}
       <div className="absolute inset-0 z-0 left-0 pointer-events-none opacity-50 flex items-center justify-center">
         <svg width="1440" height="464" viewBox="0 0 1440 464" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
@@ -57,7 +57,7 @@ const PartnersSection = () => {
               className="bg-white rounded-2xl w-32 h-32 md:w-48 md:h-48 flex items-center justify-center p-4 shadow-lg flex-shrink-0"
             >
               {/* Replace with actual image tags when logos are available */}
-              <span className="text-[#303030] font-bold text-center text-sm md:text-lg">
+              <span className="text-surface font-bold text-center text-sm md:text-lg">
                 {partner.name}
               </span>
             </div>

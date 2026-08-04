@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 export interface CarouselProps {
-  children: React.ReactNode[]
+  children: React.ReactNode
 }
 
 const ArrowLeft = () => (
@@ -35,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         loop={true}
         className="px-12"
       >
-        {children.map((child, index) => (
+        {React.Children.map(children, (child, index) => (
           <SwiperSlide key={index}>
             <div className="py-8">
               {child}

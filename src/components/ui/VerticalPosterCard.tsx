@@ -7,7 +7,7 @@ export interface VerticalPosterCardProps {
 
 const VerticalPosterCard: React.FC<VerticalPosterCardProps> = ({ image, footerText }) => {
   return (
-    <div className="flex flex-col rounded-xl overflow-hidden shadow-lg border border-white group cursor-pointer hover:border-white/80 transition-colors bg-[#292929]">
+    <div className="flex flex-col rounded-xl overflow-hidden shadow-lg border border-white group cursor-pointer hover:border-white/80 transition-colors bg-surface-mid">
       {/* Poster Image */}
       <div className="w-full aspect-[3/4] relative">
         <img 
@@ -18,7 +18,7 @@ const VerticalPosterCard: React.FC<VerticalPosterCardProps> = ({ image, footerTe
       </div>
       
       {/* Footer Bar */}
-      <div className="w-full py-5 bg-[#333333] flex justify-center items-center relative z-10">
+      <div className="w-full py-5 bg-surface-header flex justify-center items-center relative z-10">
         <span className="text-sm font-semibold tracking-wider text-white">
           {footerText}
         </span>

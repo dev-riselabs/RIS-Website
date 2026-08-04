@@ -56,15 +56,15 @@ const NewsroomSection = () => {
         {/* Right Column (Cards) */}
         <div className="flex-1 flex flex-col sm:flex-row gap-4 w-full h-full justify-end">
           
-          <div className="bg-[#E59835] rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
+          <div className="bg-accent-orange-alt rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
             <h3 className="text-white font-bold text-center text-lg">Latest Articles</h3>
           </div>
           
-          <div className="bg-[#C63E6F] rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
+          <div className="bg-accent-pink-alt rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
             <h3 className="text-white font-bold text-center text-lg">Latest Productions</h3>
           </div>
           
-          <div className="bg-[#394285] rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
+          <div className="bg-accent-blue-dark rounded-3xl w-full sm:w-1/3 aspect-square flex items-center justify-center p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer">
             <h3 className="text-white font-bold text-center text-lg text-balance">Latest Announcements</h3>
           </div>
 

@@ -95,7 +95,7 @@ const NewsletterSection = () => {
               </div>
             </div>
             
-            <button className="bg-[#44BB3D] text-white font-semibold py-3 px-16 rounded-lg hover:bg-[#3ca336] transition-colors shadow-lg text-sm">
+            <button className="bg-primary text-white font-semibold py-3 px-16 rounded-lg hover:bg-primary-hover transition-colors shadow-lg text-sm">
               Subscribe
             </button>
           </div>
