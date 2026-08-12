@@ -7,6 +7,8 @@ import StoryWorlds from './pages/StoryWorlds'
 import Experiences from './pages/Experiences'
 import Platforms from './pages/Platforms'
 import AiCreativeLab from './pages/AiCreativeLab'
+import Impact from './pages/Impact'
+import Newsroom from './pages/Newsroom'
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/experiences" element={<Experiences />} />
           <Route path="/platforms" element={<Platforms />} />
           <Route path="/ai-creative-lab" element={<AiCreativeLab />} />
+          <Route path="/impact" element={<Impact />} />
+          <Route path="/newsroom" element={<Newsroom />} />
         </Routes>
       </Layout>
     </BrowserRouter>

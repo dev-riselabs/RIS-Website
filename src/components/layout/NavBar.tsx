@@ -37,10 +37,10 @@ const NavBar = () => {
           <Link to="/ai-creative-lab" className="flex items-center hover:opacity-80 transition-opacity">AI Creative Lab <ChevronDown /></Link>
         </li>
         <li>
-          <a href="#" className="hover:opacity-80 transition-opacity">Impact</a>
+          <Link to="/impact" className="hover:opacity-80 transition-opacity">Impact</Link>
         </li>
         <li>
-          <a href="#" className="hover:opacity-80 transition-opacity">Newsroom</a>
+          <Link to="/newsroom" className="hover:opacity-80 transition-opacity">Newsroom</Link>
         </li>
         <li>
           <a href="#" className="flex items-center hover:opacity-80 transition-opacity">
