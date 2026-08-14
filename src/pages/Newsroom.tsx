@@ -1,42 +1,15 @@
 import React from 'react'
+import PageHero from '../components/ui/PageHero'
 
 const Newsroom = () => {
   return (
     <div className="w-full bg-surface min-h-screen">
-      <div className="relative w-full min-h-[90vh] bg-black overflow-hidden flex flex-col justify-end pb-32">
-        {/* Background Image */}
-        <img
-          src="/IMPACT_HERO_IMG.png"
-          alt="Newsroom Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        
-        {/* Overlay to darken image if needed for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 px-[10%] text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight mb-6 max-w-4xl tracking-tight">
-            The Stories Behind The Stories
-          </h1>
-          <p className="text-lg md:text-[22px] text-white/90 max-w-4xl font-light leading-relaxed">
-            From film productions and creator programmes to festivals, partnerships and emerging technologies, the Newsroom offers a closer look at the ideas, people and projects shaping our journey.
-          </p>
-        </div>
-
-        {/* Curved Bottom Overlay (matching other pages) */}
-        <div className="absolute bottom-0 left-0 w-full z-20 pointer-events-none">
-          <svg 
-            viewBox="0 0 1440 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="w-full h-auto text-surface"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 120L1440 120V0C1440 0 1140 120 720 120C300 120 0 0 0 0V120Z" fill="currentColor"/>
-          </svg>
-        </div>
-      </div>
+      <PageHero
+        title="The Stories Behind The Stories"
+        description="From film productions and creator programmes to festivals, partnerships and emerging technologies, the Newsroom offers a closer look at the ideas, people and projects shaping our journey."
+        backgroundImage="/IMPACT_HERO_IMG.png"
+        curveColor="#303030"
+      />
 
       {/* Newsletter Section */}
       <section className="relative w-full py-24 bg-surface overflow-hidden">

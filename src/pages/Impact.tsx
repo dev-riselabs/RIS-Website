@@ -5,44 +5,17 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import ExperienceCard from '../components/ui/ExperienceCard'
+import PageHero from '../components/ui/PageHero'
+
 const Impact = () => {
   return (
     <div className="w-full bg-surface min-h-screen">
-      <div className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col justify-end pb-32">
-        {/* Background Image */}
-        <img
-          src="/IMPACT_HERO_IMG.png"
-          alt="Impact Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        
-        {/* Overlay to darken image if needed for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 px-[10%] text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 max-w-3xl">
-            Building Culture. Inspiring Innovation.<br/>
-            Expanding Possibility.
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl font-light">
-            Our impact is measured not only by what we produce, but by what our work makes possible.
-          </p>
-        </div>
-
-        {/* Curved Bottom Overlay (matching other pages) */}
-        <div className="absolute bottom-0 left-0 w-full z-20 pointer-events-none">
-          <svg 
-            viewBox="0 0 1440 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="w-full h-auto text-surface"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 120L1440 120V0C1440 0 1140 120 720 120C300 120 0 0 0 0V120Z" fill="currentColor"/>
-          </svg>
-        </div>
-      </div>
+      <PageHero
+        title={<>Building Culture. Inspiring Innovation.<br/>Expanding Possibility.</>}
+        description="Our impact is measured not only by what we produce, but by what our work makes possible."
+        backgroundImage="/IMPACT_HERO_IMG.png"
+        curveColor="#303030"
+      />
 
       {/* Why Impact Matters Section */}
       <section className="px-[10%] py-24 bg-surface">

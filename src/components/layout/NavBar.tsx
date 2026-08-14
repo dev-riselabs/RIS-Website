@@ -43,9 +43,9 @@ const NavBar = () => {
           <Link to="/newsroom" className="hover:opacity-80 transition-opacity">Newsroom</Link>
         </li>
         <li>
-          <a href="#" className="flex items-center hover:opacity-80 transition-opacity">
+          <Link to="/contact" className="flex items-center hover:opacity-80 transition-opacity">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
       </div>

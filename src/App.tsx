@@ -9,6 +9,8 @@ import Platforms from './pages/Platforms'
 import AiCreativeLab from './pages/AiCreativeLab'
 import Impact from './pages/Impact'
 import Newsroom from './pages/Newsroom'
+import Contact from './pages/Contact'
+import Partnership from './pages/Partnership'
 
 const App = () => {
   return (
@@ -23,7 +25,10 @@ const App = () => {
           <Route path="/ai-creative-lab" element={<AiCreativeLab />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/newsroom" element={<Newsroom />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/partnership" element={<Partnership />} />
         </Routes>
+
       </Layout>
     </BrowserRouter>
   )
