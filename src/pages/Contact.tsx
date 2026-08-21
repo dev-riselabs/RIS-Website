@@ -245,7 +245,26 @@ const Contact = () => {
       
 
       <FAQSection />
-     <div className="lg:col-span-7 text-white">
+       <div className="relative z-10 mx-[5%] md:mx-[10%] pt-10 pb-20">
+        <div 
+          className="relative w-full rounded-[32px] overflow-hidden p-8 md:p-12 lg:p-20 shadow-2xl border border-surface-light bg-cover bg-center backdrop-blur-sm"
+          style={{ backgroundImage: 'url(/CAROUSEL_CARD_BG.png)' }}
+        >
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Column (Image) */}
+            <div className="lg:col-span-5 w-full">
+              <div className="bg-white rounded-[24px] shadow-2xl flex items-center justify-center aspect-square w-full max-w-[400px] mx-auto lg:mx-0">
+                <img 
+                  src="/THE_FUTURE_IS_BRIGHT.png" 
+                  alt="Popular Jing Podcast" 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Right Column (Text & Buttons) */}
+           <div className="lg:col-span-7 text-white">
               <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">The Future Is Built Through Collaboration</h2>
               
               <p className="text-white/90 leading-relaxed text-[15px] md:text-base lg:text-lg mb-10 max-w-2xl">
@@ -261,6 +280,10 @@ const Contact = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+     
     </div>
   )
 }
