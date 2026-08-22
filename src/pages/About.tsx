@@ -368,7 +368,7 @@ const About = () => {
         </div>
       </div>
       {/* Join Us Section */}
-      <div className="relative z-10 mx-[5%] md:mx-[10%] py-24 mb-20">
+      <div className="relative z-10 mx-[5%] md:mx-[10%] py-12 lg:py-24 mb-8 lg:mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side Image */}
           <div className="w-full">

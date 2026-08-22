@@ -303,11 +303,11 @@ const Contact = () => {
                 </SlideUp>
                 
                 <SlideUp delay={0.3}>
-                  <div className="flex flex-wrap gap-4">
-                    <button className="bg-primary hover:bg-primary-hover text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer">
                      Start A Conversation
                     </button>
-                    <button className="border border-white/50 hover:border-white text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer bg-transparent">
+                    <button className="w-full sm:w-auto border border-white/50 hover:border-white text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer bg-transparent">
                     Explore Our Ecosystem
                     </button>
                   </div>

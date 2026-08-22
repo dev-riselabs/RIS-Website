@@ -344,7 +344,7 @@ const Platforms = () => {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center pr-20">
+            <div className="relative z-10 flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-center pt-12 lg:pt-0 px-8 lg:px-0 lg:pr-20">
               
               {/* Left Column (Image) */}
               <div className="w-full lg:w-[40%] flex justify-center lg:justify-start">

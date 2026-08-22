@@ -145,7 +145,7 @@ const StoryWorlds = () => {
         </div>
       </div>
 
-      <div className='relative pb-60'>
+      <div className='relative pb-12 lg:pb-60'>
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0 opacity-100 top-100 bottom-0">
           <svg width="1440" height="2352" viewBox="0 0 1440 2352" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1394.73 2146.54C1394.73 2146.54 1155.82 1931.29 900.817 2271.16C645.812 2611.03 584.953 1769.29 389.047 1769.29C193.14 1769.29 86.5106 2146.54 86.5106 2146.54L0 612.043C0 612.043 71.6731 368.471 318.379 59.7581C565.086 -248.955 787.146 738.926 1000.66 738.926C1214.17 738.926 1440 7.64526 1440 7.64526L1394.73 2146.54Z" fill="#1A237E" fill-opacity="0.3" />

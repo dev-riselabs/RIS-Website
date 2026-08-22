@@ -17,7 +17,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
 }) => {
   return (
     <div 
-      className="min-h-[569px] h-full rounded-3xl px-8 md:px-12 py-10 flex flex-col md:flex-row gap-12 items-center w-[1000px] max-w-full mx-auto backdrop-blur-sm border border-surface-light bg-cover bg-center"
+      className="min-h-[569px] h-full rounded-3xl px-8 lg:px-12 py-10 flex flex-col lg:flex-row gap-12 items-center w-[1000px] max-w-full mx-auto backdrop-blur-sm border border-surface-light bg-cover bg-center"
       style={{ backgroundImage: 'url(/CAROUSEL_CARD_BG.png)' }}
     >
       <div className="flex-1 flex flex-col items-start text-white">
@@ -36,7 +36,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
         )}
       </div>
       
-      <div className="flex-1 w-full flex justify-center md:justify-end">
+      <div className="flex-1 w-full flex justify-center lg:justify-end">
         <img 
           src={image} 
           alt={title} 

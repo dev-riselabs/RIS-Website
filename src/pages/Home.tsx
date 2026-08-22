@@ -53,7 +53,7 @@ const Home = () => {
           </div>
 
             {/* Title Area - Bottom left of the hero content */}
-            <div className="absolute bottom-[12%] md:bottom-[30%] left-[10%]">
+            <div className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[30%] left-[10%]">
               <SlideUp delay={0.2} yOffset={30}>
                 <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
               </SlideUp>
@@ -66,7 +66,7 @@ const Home = () => {
             </div>
           </div>
 
-        <div className="-mt-16 md:-mt-80 relative z-20">
+        <div className="-mt-16 md:-mt-30 lg:-mt-80 relative z-20">
           <Carousel>
             <ContentCard
               category="What we create"

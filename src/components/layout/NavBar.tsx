@@ -67,7 +67,7 @@ const NavBar = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 text-white hover:text-primary transition-colors relative z-50" 
+          className="lg:hidden p-2 text-white hover:text-primary transition-colors relative z-50" 
           onClick={toggleMenu} 
           aria-label="Toggle navigation"
         >
@@ -75,7 +75,7 @@ const NavBar = () => {
         </button>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex space-x-10 items-center font-medium text-sm">
+        <ul className="hidden lg:flex space-x-10 items-center font-medium text-sm">
           <li>
             <Link to="/" className={getLinkClass('/')}>Welcome</Link>
           </li>
@@ -101,6 +101,9 @@ const NavBar = () => {
             <Link to="/newsroom" className={getLinkClass('/newsroom')}>Newsroom</Link>
           </li>
           <li>
+            <Link to="/partnership" className={getLinkClass('/partnership')}>Partnership</Link>
+          </li>
+          <li>
             <Link to="/contact" className={getLinkClass('/contact')}>
               Contact
             </Link>
@@ -110,7 +113,7 @@ const NavBar = () => {
 
       {/* Mobile Full-Screen Menu Overlay */}
       <div 
-        className={`fixed inset-0 z-40 bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        className={`fixed inset-0 z-40 bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center transition-all duration-500 ease-in-out lg:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
       >
         <ul className={`flex flex-col items-center justify-center w-full space-y-8 transform transition-all duration-700 ease-out delay-75 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <li>
@@ -136,6 +139,9 @@ const NavBar = () => {
           </li>
           <li>
             <Link to="/newsroom" className={getMobileLinkClass('/newsroom')} onClick={closeMenu}>Newsroom</Link>
+          </li>
+          <li>
+            <Link to="/partnership" className={getMobileLinkClass('/partnership')} onClick={closeMenu}>Partnership</Link>
           </li>
           <li>
             <Link to="/contact" className={getMobileLinkClass('/contact')} onClick={closeMenu}>Contact</Link>
