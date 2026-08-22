@@ -1,4 +1,8 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const PartnersSection = () => {
   return (
@@ -34,34 +38,64 @@ const PartnersSection = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-[10%] flex flex-col items-center">
-        {/* Title */}
-        <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">
-          PARTNERS & COLLABORATORS
-        </p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white text-center">
-          Building With Visionaries
-        </h2>
+      <div className="relative z-10 w-full md:w-auto md:mx-[10%] flex flex-col items-center">
+        {/* Title area with navigation */}
+        <div className="w-full relative flex flex-col items-center mb-12 px-6 md:px-0">
+          <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">
+            PARTNERS & COLLABORATORS
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center">
+            Building With Visionaries
+          </h2>
+          
+          <div className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 gap-4">
+            <button className="partners-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+            </button>
+            <button className="partners-next w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
 
         {/* Logos Container */}
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 w-full max-w-6xl">
-          {[
-            { name: 'Luminate' },
-            { name: 'British Council' },
-            { name: 'The New Black Film Collective' },
-            { name: 'Sterling' },
-            { name: 'Lagos State' }
-          ].map((partner, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl w-32 h-32 md:w-48 md:h-48 flex items-center justify-center p-4 shadow-lg flex-shrink-0"
-            >
-              {/* Replace with actual image tags when logos are available */}
-              <span className="text-surface font-bold text-center text-sm md:text-lg">
-                {partner.name}
-              </span>
-            </div>
-          ))}
+        <div className="w-full">
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={16}
+            slidesPerView={2.5}
+            navigation={{
+              prevEl: '.partners-prev',
+              nextEl: '.partners-next',
+            }}
+            breakpoints={{
+              480: { slidesPerView: 3, spaceBetween: 20 },
+              640: { slidesPerView: 3.5, spaceBetween: 24 },
+              768: { slidesPerView: 4, spaceBetween: 30 },
+              1024: { slidesPerView: 5, spaceBetween: 30 },
+            }}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            className="w-full px-4 md:px-0"
+          >
+            {[
+              { name: 'Luminate', logo: '/LUMINATE_LOGO.png' },
+              { name: 'British Council', logo: '/BRITISH_COUNCIL_LOGO.png' },
+              { name: 'The New Black Film Collective', logo: '/THE_NEW_BLACK_LOGO.png' },
+              { name: 'Sterling Bank', logo: '/STERLING_BANK_LOGO.png' },
+              { name: 'FMACTCE', logo: '/FMACTCE_LOGO.png' },
+              { name: 'Lagos State', logo: '/LASG_LOGO.png' }
+            ].map((partner, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white rounded-2xl w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center p-3 md:p-4 shadow-lg mx-auto">
+                  <img src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>

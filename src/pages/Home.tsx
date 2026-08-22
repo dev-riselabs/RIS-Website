@@ -1,4 +1,6 @@
 import React from 'react'
+import SlideUp from '../components/animations/SlideUp'
+import FadeIn from '../components/animations/FadeIn'
 import Carousel from '../components/ui/Carousel'
 import ContentCard from '../components/ui/ContentCard'
 import VerticalPosterCard from '../components/ui/VerticalPosterCard'
@@ -35,25 +37,34 @@ const Home = () => {
           {/* Gradient Overlay for better text legibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
 
-          <div className="absolute inset-0 flex flex-col justify-center w-full">
-
-            {/* Watch Trailer - Centered in the upper half */}
-            <div className="flex items-center justify-center gap-6 mt-16 md:mt-0">
-              <span className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase">Watch</span>
-              <button className="hover:scale-105 transition-transform hover:opacity-80">
-                <PlayIcon />
-              </button>
-              <span className="text-xl md:text-2xl font-bold tracking-[0.2em] uppercase">Trailer</span>
-            </div>
-
-            {/* Title Area - Bottom left of the hero content */}
-            <div className="absolute bottom-[15%] md:bottom-[30%] left-[10%]">
-              <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4">Makemation</h1>
-              <p className="text-sm font-medium tracking-wide">On the air 18 . 04 . 25</p>
+          {/* Watch Trailer - Centered in the upper half */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="pointer-events-auto">
+              <SlideUp delay={0.1} yOffset={20}>
+                <div className="flex items-center justify-center gap-6 mt-16 md:mt-0">
+                  <span className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase drop-shadow-md">Watch</span>
+                  <button className="hover:scale-105 transition-transform hover:opacity-80 drop-shadow-lg cursor-pointer">
+                    <PlayIcon />
+                  </button>
+                  <span className="text-xl md:text-2xl font-bold tracking-[0.2em] uppercase drop-shadow-md">Trailer</span>
+                </div>
+              </SlideUp>
             </div>
           </div>
-        </div>
+
+            {/* Title Area - Bottom left of the hero content */}
+            <div className="absolute bottom-[12%] md:bottom-[30%] left-[10%]">
+              <SlideUp delay={0.2} yOffset={30}>
+                <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
+              </SlideUp>
+              <SlideUp delay={0.3} yOffset={30}>
+                <h1 className="text-5xl md:text-7xl font-bold mb-4">Makemation</h1>
+              </SlideUp>
+              <SlideUp delay={0.4} yOffset={30}>
+                <p className="text-sm font-medium tracking-wide">On the air 18 . 04 . 25</p>
+              </SlideUp>
+            </div>
+          </div>
 
         <div className="-mt-16 md:-mt-80 relative z-20">
           <Carousel>
@@ -79,7 +90,7 @@ const Home = () => {
           </Carousel>
         </div>
       </div>
-      <div className="relative w-full overflow-hidden \pt-12 bg-surface">
+      <div className="relative w-full overflow-hidden pt-12 bg-surface">
         {/* Green SVG Background */}
         <div className="absolute inset-0 top-60 z-0 pointer-events-none">
           <svg width="100%" height="100%" viewBox="0 0 1440 1450" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -93,54 +104,62 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             {/* Left Text */}
             <div className="flex-1 text-white">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">Featured Projects</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Stories That Matter</h2>
-              <p className="text-white/70 leading-relaxed max-w-md">
-                We develop and produce stories that connect audiences, celebrate African excellence and explore the possibilities of tomorrow.
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white/80">Featured Projects</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Stories That Matter</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/70 leading-relaxed max-w-md">
+                  We develop and produce stories that connect audiences, celebrate African excellence and explore the possibilities of tomorrow.
+                </p>
+              </SlideUp>
             </div>
 
             {/* Right Carousel */}
             <div className="flex-1 w-full max-w-[700px] relative">
-              <Swiper
-                modules={[Navigation]}
-                spaceBetween={30}
-                slidesPerView={2}
-                navigation={{
-                  prevEl: '.stories-prev',
-                  nextEl: '.stories-next',
-                }}
-                className="pb-"
-              >
-                <SwiperSlide>
-                  <VerticalPosterCard
-                    image="/MAKEMATION_IMG.png"
-                    footerText="View Productions"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <VerticalPosterCard
-                    image="/AWOLOWO_IMG.png"
-                    footerText="Currently in Development"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <VerticalPosterCard
-                    image="/HERO_CAROUSEL_IMG.png"
-                    footerText="Coming Soon"
-                  />
-                </SwiperSlide>
-              </Swiper>
+              <FadeIn delay={0.4}>
+                <Swiper
+                  modules={[Navigation]}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  navigation={{
+                    prevEl: '.stories-prev',
+                    nextEl: '.stories-next',
+                  }}
+                  className="pb-"
+                >
+                  <SwiperSlide>
+                    <VerticalPosterCard
+                      image="/MAKEMATION_IMG.png"
+                      footerText="View Productions"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <VerticalPosterCard
+                      image="/AWOLOWO_IMG.png"
+                      footerText="Currently in Development"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <VerticalPosterCard
+                      image="/HERO_CAROUSEL_IMG.png"
+                      footerText="Coming Soon"
+                    />
+                  </SwiperSlide>
+                </Swiper>
 
-              {/* Navigation Arrows */}
-              <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 flex gap-6 z-10">
-                <button className="stories-prev w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
-                </button>
-                <button className="stories-next w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                </button>
-              </div>
+                {/* Navigation Arrows */}
+                <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 flex gap-6 z-10">
+                  <button className="stories-prev w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                  </button>
+                  <button className="stories-next w-10 h-10 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-surface transition-colors cursor-pointer disabled:opacity-50">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                  </button>
+                </div>
+              </FadeIn>
             </div>
           </div>
 
@@ -228,28 +247,35 @@ const Home = () => {
 
         {/* Left Image */}
         <div className="flex-1 w-full relative flex justify-center items-center">
-          <img
-            src="/HUMAN_MACHINES_IMG.png"
-            alt="Humachines Creative Challenge"
-            className="relative z-10 w-[90%] max-w-[500px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-          />
+          <FadeIn>
+            <img
+              src="/HUMAN_MACHINES_IMG.png"
+              alt="Humachines Creative Challenge"
+              className="relative z-10 w-[90%] max-w-[500px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
+          </FadeIn>
         </div>
 
         {/* Right Text */}
         <div className="flex-1 text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Humachines Creative Challenge</h2>
-          <p className="text-white/80 leading-relaxed mb-10 text-[17px] max-w-xl">
-            Where Human Creativity Meets Artificial Intelligence. The Humachines Creative Challenge invites creators to produce original content using AI-powered tools, pushing the boundaries of storytelling, creativity and digital expression. Hosted through DeyMake, the challenge provides a platform for creators to experiment, showcase their work and compete for recognition while exploring the future of creative production.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
-              Learn More
-            </button>
-            <button className="border border-white/50 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">
-              Join The Challenge
-            </button>
-          </div>
+          <SlideUp delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Humachines Creative Challenge</h2>
+          </SlideUp>
+          <SlideUp delay={0.2}>
+            <p className="text-white/80 leading-relaxed mb-10 text-[17px] max-w-xl">
+              Where Human Creativity Meets Artificial Intelligence. The Humachines Creative Challenge invites creators to produce original content using AI-powered tools, pushing the boundaries of storytelling, creativity and digital expression. Hosted through DeyMake, the challenge provides a platform for creators to experiment, showcase their work and compete for recognition while exploring the future of creative production.
+            </p>
+          </SlideUp>
+          <SlideUp delay={0.3}>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
+                Learn More
+              </button>
+              <button className="border border-white/50 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">
+                Join The Challenge
+              </button>
+            </div>
+          </SlideUp>
         </div>
 
       </div>
@@ -307,16 +333,16 @@ const Home = () => {
                 className="w-full pb-8"
               >
                 {[
-                  { title: "AI-Powered Content Production", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "AI Video Creation", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Motion Graphics & Multimedia Design", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Creative Technology Innovation", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Immersive Experiences", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Digital Storytelling", image: "/HERO_CAROUSEL_IMG.png" }
+                  { title: "AI-Powered Content Production", image: "/AI_CONTENT_IMG.png" },
+                  { title: "AI Video Creation", image: "/AI_VIDEO_CREATION.png" },
+                  { title: "Motion Graphics & Multimedia Design", image: "/MOTION_GRAPHICS_IMG.png" },
+                  { title: "Creative Technology Innovation", image: "/CREATIVE_TECH_IMG.png" },
+                  { title: "Immersive Experiences", image: "/AI_CONTENT_IMG.png" },
+                  { title: "Digital Storytelling", image: "/AI_VIDEO_CREATION.png" }
                 ].map((item, i) => (
                   <SwiperSlide key={i}>
                     <div className="flex flex-col items-center gap-6 group cursor-pointer">
-                      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative">
+                      <div className="w-full">
                         <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                       </div>
@@ -393,16 +419,16 @@ const Home = () => {
                 className="w-full pb-8"
               >
                 {[
-                  { title: "Education & Future Skills", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Creative Economy Development", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Youth Empowerment", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "AI Literacy & Innovation", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Community Building", image: "/HERO_CAROUSEL_IMG.png" },
-                  { title: "Cultural Preservation", image: "/HERO_CAROUSEL_IMG.png" }
+                  { title: "Education & Future Skills", image: "/EDUCATION_IMG.png" },
+                  { title: "Creative Economy Development", image: "/CREATIVE_ECONOMY_IMG.png" },
+                  { title: "Youth Empowerment", image: "/YOUTH_EMPOWERMENT_IMG.png" },
+                  { title: "AI Literacy & Innovation", image: "/AI_LITERACY_IMG.png" },
+                  { title: "Community Building", image: "/EDUCATION_IMG.png" },
+                  { title: "Cultural Preservation", image: "/CREATIVE_ECONOMY_IMG.png" }
                 ].map((item, i) => (
                   <SwiperSlide key={i}>
                     <div className="flex flex-col items-center gap-6 group cursor-pointer">
-                      <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg relative">
+                      <div className="w-full relative overflow-hidden">
                         <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                       </div>
@@ -437,28 +463,36 @@ const Home = () => {
 
           {/* Left Image */}
           <div className="flex-1 w-full">
-            <img
-              src="/BUILDFUTURE_IMG.png"
-              alt="Let's build the future together"
-              className="w-full h-auto rounded-3xl drop-shadow-2xl object-cover"
-            />
+            <FadeIn>
+              <img
+                src="/BUILDFUTURE_IMG.png"
+                alt="Let's build the future together"
+                className="w-full h-auto rounded-3xl drop-shadow-2xl object-cover"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Text */}
           <div className="flex-1 text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Let's Build The Future Together</h2>
-            <p className="text-white/80 leading-relaxed mb-10 text-[17px] max-w-xl">
-              Whether you're looking to create a production, design an experience, build a platform or explore new possibilities through storytelling and technology, we'd love to hear from you.
-            </p>
+            <SlideUp delay={0.1}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Let's Build The Future Together</h2>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <p className="text-white/80 leading-relaxed mb-10 text-[17px] max-w-xl">
+                Whether you're looking to create a production, design an experience, build a platform or explore new possibilities through storytelling and technology, we'd love to hear from you.
+              </p>
+            </SlideUp>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
-                Start a Conversation
-              </button>
-              <button className="border border-white/30 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">
-                Explore Our Work
-              </button>
-            </div>
+            <SlideUp delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-primary text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
+                  Start a Conversation
+                </button>
+                <button className="border border-white/30 text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/10 transition-colors">
+                  Explore Our Work
+                </button>
+              </div>
+            </SlideUp>
           </div>
 
         </div>

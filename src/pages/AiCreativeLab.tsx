@@ -1,5 +1,11 @@
 import React from 'react';
+import SlideUp from '../components/animations/SlideUp';
+import FadeIn from '../components/animations/FadeIn';
 import PageHero from '../components/ui/PageHero';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const AiCreativeLab = () => {
   return (
@@ -16,27 +22,37 @@ const AiCreativeLab = () => {
           
           {/* Left Column (Image) */}
           <div className="w-full">
-            <img 
-              src="/AI_LAB_IMG.png" 
-              alt="AI Lab" 
-              className="w-full h-auto rounded-3xl object-cover shadow-2xl"
-            />
+            <FadeIn>
+              <img 
+                src="/AI_LAB_IMG.png" 
+                alt="AI Lab" 
+                className="w-full h-auto rounded-3xl object-cover shadow-2xl"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Column (Text) */}
           <div className="text-white">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR PHILOSOPHY</p>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">
-              Human Creativity. Intelligent<br className="hidden lg:block"/> Technology
-            </h2>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR PHILOSOPHY</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">
+                Human Creativity. Intelligent<br className="hidden lg:block"/> Technology
+              </h2>
+            </SlideUp>
             
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg mb-6">
-              We believe the future belongs to creators who can combine imagination with innovation. Artificial intelligence is transforming how stories are conceived, produced, distributed and experienced.
-            </p>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg mb-6">
+                We believe the future belongs to creators who can combine imagination with innovation. Artificial intelligence is transforming how stories are conceived, produced, distributed and experienced.
+              </p>
+            </SlideUp>
             
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
-              The AI Creative Lab exists to help shape that future by exploring responsible, creative and impactful applications of emerging technologies.
-            </p>
+            <SlideUp delay={0.4}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
+                The AI Creative Lab exists to help shape that future by exploring responsible, creative and impactful applications of emerging technologies.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </div>
@@ -56,49 +72,79 @@ const AiCreativeLab = () => {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             {/* Left Column (Text) */}
             <div className="w-full lg:w-[35%] text-white pt-4">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4">WHAT WE EXPLORE</p>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Building The Future Of Creative Expression</h2>
-              <p className="text-white/80 leading-relaxed text-[15px] md:text-base pr-8">
-                Our work spans multiple areas of innovation including:
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4">WHAT WE EXPLORE</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Building The Future Of Creative Expression</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/80 leading-relaxed text-[15px] md:text-base pr-8">
+                  Our work spans multiple areas of innovation including:
+                </p>
+              </SlideUp>
             </div>
             
             {/* Right Column (Cards) */}
-            <div className="w-full lg:w-[65%]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Card 1 */}
-                <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-full aspect-[4/3] bg-surface-mid relative">
-                    <img src="/AI_STORY_TELLING.png" alt="AI Storytelling" className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">AI Storytelling</h3>
-                    <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
-                      Exploring new ways to develop narratives, characters and immersive story experiences using emerging technologies.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Card 2 */}
-                <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-full aspect-[4/3] bg-surface-mid relative">
-                    <img src="/AI_CONTENT_PRODUCTION.png" alt="AI Content Production" className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">AI Content Production</h3>
-                    <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
-                      Creating visual, audio and multimedia content powered by intelligent creative tools and workflows.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full lg:w-[65%] min-w-0 relative">
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={24}
+                slidesPerView={1.2}
+                navigation={{
+                  prevEl: '.whatweexplore-prev',
+                  nextEl: '.whatweexplore-next',
+                }}
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 2 },
+                }}
+                className="w-full pb-4"
+              >
+                {[
+                  {
+                    title: "AI Storytelling",
+                    desc: "Exploring new ways to develop narratives, characters and immersive story experiences using emerging technologies.",
+                    img: "/AI_STORY_TELLING.png"
+                  },
+                  {
+                    title: "AI Content Production",
+                    desc: "Creating visual, audio and multimedia content powered by intelligent creative tools and workflows.",
+                    img: "/AI_CONTENT_PRODUCTION.png"
+                  },
+                  {
+                    title: "AI Storytelling",
+                    desc: "Exploring new ways to develop narratives, characters and immersive story experiences using emerging technologies.",
+                    img: "/AI_STORY_TELLING.png"
+                  },
+                  {
+                    title: "AI Content Production",
+                    desc: "Creating visual, audio and multimedia content powered by intelligent creative tools and workflows.",
+                    img: "/AI_CONTENT_PRODUCTION.png"
+                  }
+                ].map((item, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 h-full">
+                      <div className="w-full aspect-[4/3] bg-surface-mid relative">
+                        <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+                      </div>
+                      <div className="p-6 md:p-8 flex flex-col flex-1">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-3">{item.title}</h3>
+                        <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               
               {/* Navigation Arrows */}
               <div className="flex justify-end gap-3 mt-8">
-                <button className="w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <button className="whatweexplore-prev w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer disabled:opacity-50">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
-                <button className="w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <button className="whatweexplore-next w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer disabled:opacity-50">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
               </div>
@@ -109,41 +155,65 @@ const AiCreativeLab = () => {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mt-24">
             
             {/* Left Column (Cards) */}
-            <div className="w-full lg:w-[65%] order-2 lg:order-1">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Card 1 */}
-                <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-full aspect-[4/3] bg-surface-mid relative">
-                    <img src="/AI_POWERED_CONTENT_PRODUCTION.png" alt="AI-Powered Content Production" className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">AI-Powered Content Production</h3>
-                    <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
-                      Development of promotional videos, visual assets, explainers and multimedia content using AI-assisted workflows.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Card 2 */}
-                <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-full aspect-[4/3] bg-surface-mid relative">
-                    <img src="/AI_EXPERIENCE_STORYTELLING.png" alt="Experience Storytelling" className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">Experience Storytelling</h3>
-                    <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
-                      Using AI-enhanced content systems to support audience engagement and experience amplification.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full lg:w-[65%] order-2 lg:order-1 min-w-0 relative">
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={24}
+                slidesPerView={1.2}
+                navigation={{
+                  prevEl: '.aiinaction-prev',
+                  nextEl: '.aiinaction-next',
+                }}
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 2 },
+                }}
+                className="w-full pb-4"
+              >
+                {[
+                  {
+                    title: "AI-Powered Content Production",
+                    desc: "Development of promotional videos, visual assets, explainers and multimedia content using AI-assisted workflows.",
+                    img: "/AI_POWERED_CONTENT_PRODUCTION.png"
+                  },
+                  {
+                    title: "Experience Storytelling",
+                    desc: "Using AI-enhanced content systems to support audience engagement and experience amplification.",
+                    img: "/AI_EXPERIENCE_STORYTELLING.png"
+                  },
+                  {
+                    title: "AI-Powered Content Production",
+                    desc: "Development of promotional videos, visual assets, explainers and multimedia content using AI-assisted workflows.",
+                    img: "/AI_POWERED_CONTENT_PRODUCTION.png"
+                  },
+                  {
+                    title: "Experience Storytelling",
+                    desc: "Using AI-enhanced content systems to support audience engagement and experience amplification.",
+                    img: "/AI_EXPERIENCE_STORYTELLING.png"
+                  }
+                ].map((item, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 h-full">
+                      <div className="w-full aspect-[4/3] bg-surface-mid relative">
+                        <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+                      </div>
+                      <div className="p-6 md:p-8 flex flex-col flex-1">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-3">{item.title}</h3>
+                        <p className="text-white/80 text-[13px] md:text-sm leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               
               {/* Navigation Arrows */}
               <div className="flex justify-start gap-3 mt-8">
-                <button className="w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <button className="aiinaction-prev w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer disabled:opacity-50">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
-                <button className="w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <button className="aiinaction-next w-9 h-9 rounded-full border border-white/80 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer disabled:opacity-50">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
               </div>
@@ -151,14 +221,22 @@ const AiCreativeLab = () => {
 
             {/* Right Column (Text) */}
             <div className="w-full lg:w-[35%] text-white pt-4 order-1 lg:order-2">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4">AI IN ACTION</p>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Real-World Applications</h2>
-              <p className="text-white/80 leading-relaxed text-[15px] md:text-base mb-6 pr-8">
-                Our AI capabilities have been applied across productions, experiences and strategic initiatives.
-              </p>
-              <p className="text-white/80 leading-relaxed text-[15px] md:text-base pr-8">
-                Examples include:
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4">AI IN ACTION</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Real-World Applications</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/80 leading-relaxed text-[15px] md:text-base mb-6 pr-8">
+                  Our AI capabilities have been applied across productions, experiences and strategic initiatives.
+                </p>
+              </SlideUp>
+              <SlideUp delay={0.4}>
+                <p className="text-white/80 leading-relaxed text-[15px] md:text-base pr-8">
+                  Examples include:
+                </p>
+              </SlideUp>
             </div>
             
           </div>
@@ -181,20 +259,28 @@ const AiCreativeLab = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column (Image) */}
             <div className="w-full order-1 lg:order-1">
-              <img 
-                src="/MAKE_MATION_FUTURE_OF_AI_IMG.png" 
-                alt="Makemation & The Future of AI" 
-                className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
-              />
+              <FadeIn>
+                <img 
+                  src="/MAKE_MATION_FUTURE_OF_AI_IMG.png" 
+                  alt="Makemation & The Future of AI" 
+                  className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
+                />
+              </FadeIn>
             </div>
             
             {/* Right Column (Text) */}
             <div className="text-white order-2 lg:order-2">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">MAKEMATION &amp; THE FUTURE OF AI</p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Storytelling That Inspires Innovation</h2>
-              <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
-                Through Makemation and the broader Makemation ecosystem, Rise Interactive Studios has helped create conversations around artificial intelligence, creativity and future skills. From film to festivals and educational engagement, we continue to explore how storytelling can make complex technologies accessible, inspiring and relevant to everyday lives.
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">MAKEMATION &amp; THE FUTURE OF AI</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Storytelling That Inspires Innovation</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
+                  Through Makemation and the broader Makemation ecosystem, Rise Interactive Studios has helped create conversations around artificial intelligence, creativity and future skills. From film to festivals and educational engagement, we continue to explore how storytelling can make complex technologies accessible, inspiring and relevant to everyday lives.
+                </p>
+              </SlideUp>
             </div>
           </div>
           
@@ -202,20 +288,28 @@ const AiCreativeLab = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column (Text) */}
             <div className="text-white order-2 lg:order-1">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">AFRIFF AI WORKSHOP &amp; CULTURAL DIALOGUE</p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Where Film, Culture and AI Converge</h2>
-              <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
-                As curators of the AFRIFF AI Workshop &amp; Cultural Dialogue, we bring together filmmakers, creators, technologists and cultural leaders to examine the evolving relationship between creativity and emerging technologies. The initiative creates space for experimentation, learning and collaboration while helping shape the future of Africa's creative industries.
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">AFRIFF AI WORKSHOP &amp; CULTURAL DIALOGUE</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Where Film, Culture and AI Converge</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
+                  As curators of the AFRIFF AI Workshop &amp; Cultural Dialogue, we bring together filmmakers, creators, technologists and cultural leaders to examine the evolving relationship between creativity and emerging technologies. The initiative creates space for experimentation, learning and collaboration while helping shape the future of Africa's creative industries.
+                </p>
+              </SlideUp>
             </div>
             
             {/* Right Column (Image) */}
             <div className="w-full order-1 lg:order-2">
-              <img 
-                src="/ARIFF_AI_WORKSHOP_IMG.png" 
-                alt="AFRIFF AI Workshop" 
-                className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
-              />
+              <FadeIn>
+                <img 
+                  src="/ARIFF_AI_WORKSHOP_IMG.png" 
+                  alt="AFRIFF AI Workshop" 
+                  className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
+                />
+              </FadeIn>
             </div>
           </div>
           
@@ -224,11 +318,17 @@ const AiCreativeLab = () => {
 
       {/* Focus Areas Section */}
       <div className="relative z-10 mx-[5%] md:mx-[10%] pt-16 pb-32">
-        <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR FOCUS AREAS</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">Shaping What's Next</h2>
-        <p className="text-white/80 leading-relaxed text-[15px] md:text-base mb-12 max-w-4xl">
-          We are particularly interested in the intersection of:
-        </p>
+        <SlideUp delay={0.1}>
+          <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR FOCUS AREAS</p>
+        </SlideUp>
+        <SlideUp delay={0.2}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">Shaping What's Next</h2>
+        </SlideUp>
+        <SlideUp delay={0.3}>
+          <p className="text-white/80 leading-relaxed text-[15px] md:text-base mb-12 max-w-4xl">
+            We are particularly interested in the intersection of:
+          </p>
+        </SlideUp>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           <div className="bg-[#FF4B4B] rounded-[20px] p-6 md:p-8 flex items-center justify-center text-center min-h-[140px] shadow-xl hover:scale-[1.02] transition-transform">
@@ -269,21 +369,29 @@ const AiCreativeLab = () => {
           
           {/* Left Column (Image) */}
           <div className="w-full">
-            <img 
-              src="/RESPONSIBLE_INNOVATION_IMG.png" 
-              alt="Responsible Innovation" 
-              className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
-            />
+            <FadeIn>
+              <img 
+                src="/RESPONSIBLE_INNOVATION_IMG.png" 
+                alt="Responsible Innovation" 
+                className="w-full h-auto rounded-[20px] object-cover shadow-2xl"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Column (Text) */}
           <div className="text-white">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">RESPONSIBLE INNOVATION</p>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Technology With Purpose</h2>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">RESPONSIBLE INNOVATION</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Technology With Purpose</h2>
+            </SlideUp>
             
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
-              We believe innovation should be guided by ethics, inclusion and human-centered design. Our work seeks to ensure that emerging technologies create opportunities for learning, creativity and positive social impact. We are committed to exploring AI in ways that amplify human potential and contribute to a more inclusive future.
-            </p>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base lg:text-lg">
+                We believe innovation should be guided by ethics, inclusion and human-centered design. Our work seeks to ensure that emerging technologies create opportunities for learning, creativity and positive social impact. We are committed to exploring AI in ways that amplify human potential and contribute to a more inclusive future.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </div>
@@ -298,31 +406,39 @@ const AiCreativeLab = () => {
             
             {/* Left Column (Image) */}
             <div className="lg:col-span-5 w-full">
-              <div className="bg-white rounded-[24px] p-8 md:p-12 shadow-2xl flex items-center justify-center aspect-square w-full max-w-[400px] mx-auto lg:mx-0">
-                <img 
-                  src="/POPULAR_JING_IMG.png" 
-                  alt="Popular Jing Podcast" 
-                  className="w-full h-auto object-contain"
-                />
-              </div>
+              <FadeIn>
+                <div className="bg-white rounded-[24px] p-8 md:p-12 shadow-2xl flex items-center justify-center aspect-square w-full max-w-[400px] mx-auto lg:mx-0">
+                  <img 
+                    src="/POPULAR_JING_IMG.png" 
+                    alt="Popular Jing Podcast" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </FadeIn>
             </div>
 
             {/* Right Column (Text & Buttons) */}
             <div className="lg:col-span-7 text-white">
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">The Future Is Creative</h2>
+              <SlideUp delay={0.1}>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">The Future Is Creative</h2>
+              </SlideUp>
               
-              <p className="text-white/90 leading-relaxed text-[15px] md:text-base lg:text-lg mb-10 max-w-2xl">
-                Technology alone does not change the world. People do. Our mission is to help creators, storytellers, innovators and communities harness emerging technologies to build a future that is imaginative, inclusive and impactful.
-              </p>
+              <SlideUp delay={0.2}>
+                <p className="text-white/90 leading-relaxed text-[15px] md:text-base lg:text-lg mb-10 max-w-2xl">
+                  Technology alone does not change the world. People do. Our mission is to help creators, storytellers, innovators and communities harness emerging technologies to build a future that is imaginative, inclusive and impactful.
+                </p>
+              </SlideUp>
               
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-primary hover:bg-primary-hover text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer">
-                  Explore Our Story Worlds
-                </button>
-                <button className="border border-white/50 hover:border-white text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer bg-transparent">
-                  Explore Our Experiences
-                </button>
-              </div>
+              <SlideUp delay={0.3}>
+                <div className="flex flex-wrap gap-4">
+                  <button className="bg-primary hover:bg-primary-hover text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer">
+                    Explore Our Story Worlds
+                  </button>
+                  <button className="border border-white/50 hover:border-white text-white font-medium rounded-lg px-6 py-3 transition-colors text-[15px] cursor-pointer bg-transparent">
+                    Explore Our Experiences
+                  </button>
+                </div>
+              </SlideUp>
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="relative z-10 mx-[10%] px-6 md:px-12 flex flex-col gap-20 ">
         
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 pt-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-12 pt-16">
           <div className="flex-shrink-0 bg-white p-3 w-56 lg:w-64 rounded-sm shadow-md">
             <img src="/RIS_LOGO.png" alt="Rise Interactive Studios" className="w-full h-auto object-contain" />
           </div>

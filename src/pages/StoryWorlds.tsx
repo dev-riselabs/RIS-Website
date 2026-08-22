@@ -1,7 +1,13 @@
 import React from 'react';
+import SlideUp from '../components/animations/SlideUp';
+import FadeIn from '../components/animations/FadeIn';
 import PageHero from '../components/ui/PageHero';
 import Carousel from '../components/ui/Carousel';
 import ContentCard from '../components/ui/ContentCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const StoryWorlds = () => {
   return (
@@ -26,20 +32,28 @@ const StoryWorlds = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column (Image) */}
           <div className="w-full">
-            <img
-              src="/OUR_APPROACH_IMG.png"
-              alt="Film Crew"
-              className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
-            />
+            <FadeIn>
+              <img
+                src="/OUR_APPROACH_IMG.png"
+                alt="Film Crew"
+                className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Column (Text) */}
           <div className="text-white">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Building Intellectual Property for the Future</h2>
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
-              Every Story World begins with an idea. Some begin as films. Others begin as books, biographies, experiences or cultural movements. Our role is to nurture those ideas and develop them into meaningful intellectual property capable of reaching audiences through multiple formats and experiences.
-            </p>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Building Intellectual Property for the Future</h2>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
+                Every Story World begins with an idea. Some begin as films. Others begin as books, biographies, experiences or cultural movements. Our role is to nurture those ideas and develop them into meaningful intellectual property capable of reaching audiences through multiple formats and experiences.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </div>
@@ -140,73 +154,110 @@ const StoryWorlds = () => {
 
         <div className='pt-20 mx-[5%] md:mx-[10%] relative'>
           <div className="flex flex-col items-center text-center text-white max-w-3xl mx-auto mb-12">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Human Creativity. Intelligent Technology.</h2>
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
-              We combine creative excellence with emerging technologies to develop experiences that are imaginative, impactful and future ready. This enables us to create experiences that are both meaningful and scalable.
-            </p>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Human Creativity. Intelligent Technology.</h2>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
+                We combine creative excellence with emerging technologies to develop experiences that are imaginative, impactful and future ready. This enables us to create experiences that are both meaningful and scalable.
+              </p>
+            </SlideUp>
           </div>
 
           <div className="w-full flex justify-between items-center mb-8">
             <p className="text-white/70 text-sm md:text-base">Our approach integrates:</p>
 
             <div className="flex gap-4">
-              <button className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+              <button className="approach-prev w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-50">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18 l-6-6 6-6" /></svg>
               </button>
-              <button className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+              <button className="approach-next w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-50">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 l6-6 -6-6" /></svg>
               </button>
             </div>
           </div>
 
-          {/* Approach Cards Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-40">
-            {[
-              { title: "Storytelling", image: "/STORYTELLING_PLACEHOLDER.png" },
-              { title: "Design", image: "/DESIGN_PLACEHOLDER.png" },
-              { title: "Artificial Intelligence", image: "/HUMAN_MACHINES_IMG.png" },
-              { title: "Creative Technology", image: "/CREATIVE_TECH_PLACEHOLDER.png" },
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center group">
-                <div className="w-full aspect-[4/3] rounded-[2rem] bg-white/5 border border-white/10 overflow-hidden mb-4 relative drop-shadow-lg group-hover:border-white/20 transition-all">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#444] to-[#222]"></div>
-                  <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover mix-blend-normal z-10 transition-transform duration-500 group-hover:scale-105" onError={(e) => e.currentTarget.style.display = 'none'} />
-                </div>
-                <h4 className="text-white text-sm font-medium">{item.title}</h4>
-              </div>
-            ))}
+          {/* Approach Cards Slider */}
+          <div className="w-full relative mb-40">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={24}
+              slidesPerView={1.5}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+              navigation={{
+                prevEl: '.approach-prev',
+                nextEl: '.approach-next',
+              }}
+              className="w-full"
+            >
+              {[
+                { title: "Feature Films", image: "/FEATURE_FILMS_IMG.png" },
+                { title: "Television", image: "/TELEVISION_IMG.png" },
+                { title: "Books", image: "/BOOKS_IMG.png" },
+                { title: "Animation", image: "/ANIMATION_IMG.png" },
+              ].map((item, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="flex flex-col items-center group">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-auto mb-4 drop-shadow-lg transition-transform duration-500 group-hover:scale-105" 
+                      onError={(e) => e.currentTarget.style.display = 'none'} 
+                    />
+                    <h4 className="text-white text-sm font-medium">{item.title}</h4>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
 
 <div className='mx-[5%] md:mx-[10%] relative pb-20'>
-  <p className='text-white text-xl  text-center max-w-3xl mx-auto'>We believe African stories deserve the opportunity to <br /> reach audiences wherever they are.</p>
+  <SlideUp delay={0.1}>
+    <p className='text-white text-xl  text-center max-w-3xl mx-auto'>We believe African stories deserve the opportunity to <br /> reach audiences wherever they are.</p>
+  </SlideUp>
 </div>
         <div className=' relative flex justify-center '>
-          <img src="/BEYOND_IMG.png" alt="" className='w-[600px]' />
+          <FadeIn>
+            <img src="/BEYOND_IMG.png" alt="" className='w-[600px]' />
+          </FadeIn>
         </div>
 
 <div className='pt-20 mx-[5%] md:mx-[10%] relative'>
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column (Image) */}
           <div className="w-full">
-            <img
-              src="/EVERY_GREAT_STORY_IMG.png"
-              alt="Film Crew"
-              className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
-            />
+            <FadeIn>
+              <img
+                src="/EVERY_GREAT_STORY_IMG.png"
+                alt="Film Crew"
+                className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Column (Text) */}
           <div className="text-white">
-         
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Every Great Story Begins With An Idea</h2>
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
-              We are committed to creating Story Worlds that entertain, inspire and leave a lasting cultural impact.  Through storytelling, creativity and innovation, we are building intellectual property that can travel across platforms, generations  and global audiences.
-            </p>
-             <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px] mt-4 w-full">
+            <SlideUp delay={0.1}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Every Great Story Begins With An Idea</h2>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
+                We are committed to creating Story Worlds that entertain, inspire and leave a lasting cultural impact.  Through storytelling, creativity and innovation, we are building intellectual property that can travel across platforms, generations  and global audiences.
+              </p>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px] mt-4 w-full">
                 Partner With Us
-              </button>    
+              </button>
+            </SlideUp>
           </div>
         </div>
         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import SlideUp from '../components/animations/SlideUp';
+import FadeIn from '../components/animations/FadeIn';
 import PageHero from '../components/ui/PageHero';
 import Carousel from '../components/ui/Carousel';
 import ContentCard from '../components/ui/ContentCard';
@@ -23,26 +25,38 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column (Image) */}
           <div className="w-full">
-            <img 
-              src="/ABOUT_PG_OUR_STORY.png" 
-              alt="Our Story" 
-              className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
-            />
+            <FadeIn>
+              <img 
+                src="/ABOUT_PG_OUR_STORY.png" 
+                alt="Our Story" 
+                className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
+              />
+            </FadeIn>
           </div>
 
           {/* Right Column (Text) */}
           <div className="text-white">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR STORY</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Where Creativity Meets Possibility</h2>
-            <p className="text-white/80 leading-relaxed text-xl mb-6">
-              Rise Interactive Studios was founded on a simple belief: Africa's next generation of stories, creators and cultural experiences will be powered by the convergence of creativity, technology and innovation.
-            </p>
-            <p className="text-white/80 leading-relaxed text-xl mb-6">
-              As storytelling continues to evolve, we see an opportunity to build more than productions. We are building a creative ecosystem where films, books, animations, music, experiences and digital platforms work together to amplify African voices and create lasting impact.
-            </p>
-            <p className="text-white/80 leading-relaxed text-xl">
-              Today, our work spans content creation, creative technology, publishing, cultural experiences, innovation platforms and intellectual property development designed for African and global audiences.
-            </p>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR STORY</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Where Creativity Meets Possibility</h2>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-xl mb-6">
+                Rise Interactive Studios was founded on a simple belief: Africa's next generation of stories, creators and cultural experiences will be powered by the convergence of creativity, technology and innovation.
+              </p>
+            </SlideUp>
+            <SlideUp delay={0.4}>
+              <p className="text-white/80 leading-relaxed text-xl mb-6">
+                As storytelling continues to evolve, we see an opportunity to build more than productions. We are building a creative ecosystem where films, books, animations, music, experiences and digital platforms work together to amplify African voices and create lasting impact.
+              </p>
+            </SlideUp>
+            <SlideUp delay={0.5}>
+              <p className="text-white/80 leading-relaxed text-xl">
+                Today, our work spans content creation, creative technology, publishing, cultural experiences, innovation platforms and intellectual property development designed for African and global audiences.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </div>
@@ -61,39 +75,57 @@ const About = () => {
           {/* OUR VISION */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
             <div className="text-white order-2 lg:order-1">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR VISION</p>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">A Future Built on African Stories</h2>
-              <p className="text-white/90 leading-relaxed text-xl mb-6">
-                We envision a future where African stories, ideas and creative talent influence culture, inspire innovation and shape conversations around the world.
-              </p>
-              <p className="text-white/90 leading-relaxed text-xl">
-                Our ambition is to become one of Africa's leading media, entertainment and intellectual property companies, creating world-class productions, experiences and platforms that celebrate the continent's creativity and potential.
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR VISION</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">A Future Built on African Stories</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/90 leading-relaxed text-xl mb-6">
+                  We envision a future where African stories, ideas and creative talent influence culture, inspire innovation and shape conversations around the world.
+                </p>
+              </SlideUp>
+              <SlideUp delay={0.4}>
+                <p className="text-white/90 leading-relaxed text-xl">
+                  Our ambition is to become one of Africa's leading media, entertainment and intellectual property companies, creating world-class productions, experiences and platforms that celebrate the continent's creativity and potential.
+                </p>
+              </SlideUp>
             </div>
             <div className="w-full order-1 lg:order-2">
-              <img 
-                src="/OUR_VISION_ABOUTPG_IMG.png" 
-                alt="Our Vision" 
-                className="w-full h-auto rounded-[2.5rem] object-cover drop-shadow-xl z-20 relative"
-              />
+              <FadeIn>
+                <img 
+                  src="/OUR_VISION_ABOUTPG_IMG.png" 
+                  alt="Our Vision" 
+                  className="w-full h-auto rounded-[2.5rem] object-cover drop-shadow-xl z-20 relative"
+                />
+              </FadeIn>
             </div>
           </div>
 
           {/* WHAT WE BELIEVE */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="w-full">
-              <img 
-                src="/WHAT_WE_BELIEVE_ABOUTPG_IMG.png" 
-                alt="What We Believe" 
-                className="w-full h-auto rounded-[2.5rem] object-cover drop-shadow-xl z-20 relative"
-              />
+              <FadeIn>
+                <img 
+                  src="/WHAT_WE_BELIEVE_ABOUTPG_IMG.png" 
+                  alt="What We Believe" 
+                  className="w-full h-auto rounded-[2.5rem] object-cover drop-shadow-xl z-20 relative"
+                />
+              </FadeIn>
             </div>
             <div className="text-white">
-              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">WHAT WE BELIEVE</p>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Stories Have Power</h2>
-              <p className="text-white/90 leading-relaxed text-xl">
-                Stories inspire action, preserve culture, build communities and help people imagine new possibilities. We believe storytelling is one of the most powerful tools for education, innovation, social change and economic growth. That's why we invest in stories that entertain, educate and inspire.
-              </p>
+              <SlideUp delay={0.1}>
+                <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">WHAT WE BELIEVE</p>
+              </SlideUp>
+              <SlideUp delay={0.2}>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Stories Have Power</h2>
+              </SlideUp>
+              <SlideUp delay={0.3}>
+                <p className="text-white/90 leading-relaxed text-xl">
+                  Stories inspire action, preserve culture, build communities and help people imagine new possibilities. We believe storytelling is one of the most powerful tools for education, innovation, social change and economic growth. That's why we invest in stories that entertain, educate and inspire.
+                </p>
+              </SlideUp>
             </div>
           </div>
         </div>
@@ -134,11 +166,17 @@ const About = () => {
         <div className="relative z-10 mx-[5%] md:mx-[10%] pt-32 pb-40">
           {/* OUR APPROACH */}
           <div className="flex flex-col items-center text-center text-white max-w-3xl mx-auto mb-12">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Human Creativity. Intelligent Technology.</h2>
-            <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
-              We combine creative excellence with emerging technologies to develop experiences that are imaginative, impactful and future ready. This enables us to create experiences that are both meaningful and scalable.
-            </p>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">OUR APPROACH</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Human Creativity. Intelligent Technology.</h2>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] md:text-base">
+                We combine creative excellence with emerging technologies to develop experiences that are imaginative, impactful and future ready. This enables us to create experiences that are both meaningful and scalable.
+              </p>
+            </SlideUp>
           </div>
           
           <div className="w-full flex justify-between items-center mb-8">
@@ -157,16 +195,18 @@ const About = () => {
           {/* Approach Cards Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-40">
             {[
-              { title: "Storytelling", image: "/STORYTELLING_PLACEHOLDER.png" },
-              { title: "Design", image: "/DESIGN_PLACEHOLDER.png" },
-              { title: "Artificial Intelligence", image: "/HUMAN_MACHINES_IMG.png" },
-              { title: "Creative Technology", image: "/CREATIVE_TECH_PLACEHOLDER.png" },
+              { title: "Storytelling", image: "/STORYTELLING_ABOUT_IMG.png" },
+              { title: "Design", image: "/DESIGN_ABOUT_IMG.png" },
+              { title: "Artificial Intelligence", image: "/AI_ABOUT_IMG.png" },
+              { title: "Creative Technology", image: "/CREATIVE_TECH_IMG.png" },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center group">
-                <div className="w-full aspect-[4/3] rounded-[2rem] bg-white/5 border border-white/10 overflow-hidden mb-4 relative drop-shadow-lg group-hover:border-white/20 transition-all">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#444] to-[#222]"></div>
-                  <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover mix-blend-normal z-10 transition-transform duration-500 group-hover:scale-105" onError={(e) => e.currentTarget.style.display = 'none'} />
-                </div>
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-auto mb-4  transition-transform duration-500 group-hover:scale-105" 
+                  onError={(e) => e.currentTarget.style.display = 'none'} 
+                />
                 <h4 className="text-white text-sm font-medium">{item.title}</h4>
               </div>
             ))}
@@ -194,17 +234,17 @@ const About = () => {
                 className="w-full pb-4"
               >
                 <SwiperSlide className="!w-auto">
-                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-[2.5rem] bg-accent-green-alt p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
+                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-xl bg-accent-green-alt p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
                     <h4 className="text-white font-bold text-sm md:text-[15px] leading-tight">Youth Development</h4>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-[2.5rem] bg-accent-magenta p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
+                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-xl bg-accent-magenta p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
                     <h4 className="text-white font-bold text-sm md:text-[15px] leading-tight">Future Skills Education</h4>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-[2.5rem] bg-accent-blue-alt p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
+                  <div className="w-[220px] lg:w-[240px] h-[220px] rounded-xl bg-accent-blue-alt p-8 flex items-center justify-center text-center hover:scale-[1.02] transition-transform">
                     <h4 className="text-white font-bold text-sm md:text-[15px] leading-tight">Creative Economy Growth</h4>
                   </div>
                 </SwiperSlide>
@@ -265,28 +305,65 @@ const About = () => {
 
           {/* LEADERSHIP */}
           <div className="flex flex-col items-center text-center text-white mb-12">
-            <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">LEADERSHIP</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">The Team Behind The Vision</h2>
-            <p className="text-white/80 leading-relaxed text-[15px] max-w-2xl">
-              A diverse network of storytellers, innovators, technologists, producers and creative thinkers working together to shape the future of African storytelling.
-            </p>
+            <SlideUp delay={0.1}>
+              <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">LEADERSHIP</p>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">The Team Behind The Vision</h2>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-white/80 leading-relaxed text-[15px] max-w-2xl">
+                A diverse network of storytellers, innovators, technologists, producers and creative thinkers working together to shape the future of African storytelling.
+              </p>
+            </SlideUp>
           </div>
           
           {/* Arrows */}
           <div className="w-full flex justify-end gap-4 mb-8">
-            <button className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+            <button className="leadership-prev w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18 l-6-6 6-6"/></svg>
             </button>
-            <button className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+            <button className="leadership-next w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 l6-6 -6-6"/></svg>
             </button>
           </div>
           
-          {/* Placeholder Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="w-full aspect-[3/4] bg-black rounded-3xl border-4 border-surface-dark"></div>
-            ))}
+          {/* Slider Cards */}
+          <div className="w-full relative">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={24}
+              slidesPerView={1.5}
+              breakpoints={{
+                640: { slidesPerView: 2.5 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+              navigation={{
+                prevEl: '.leadership-prev',
+                nextEl: '.leadership-next',
+              }}
+              className="w-full pb-4"
+            >
+              {[
+                { name: "Team Member", role: "Leadership", image: "/FOR_FILMMAKERS.png" },
+                { name: "Team Member", role: "Leadership", image: "/FOR_EDUCATORS.png" },
+                { name: "Team Member", role: "Leadership", image: "/FOR_INVESTORS.png" },
+                { name: "Team Member", role: "Leadership", image: "/FOR_CREATORS_4.png" },
+                { name: "Team Member", role: "Leadership", image: "/AI_LAB_IMG.png" },
+              ].map((item, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="w-full aspect-[3/4] rounded-3xl overflow-hidden relative shadow-lg group bg-black/50">
+                    <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.currentTarget.style.display = 'none'} />
+                    <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute bottom-6 left-6 text-white z-20 pointer-events-none">
+                      <h4 className="font-bold text-lg">{item.name}</h4>
+                      <p className="text-white/80 text-sm">{item.role}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>
@@ -295,27 +372,35 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side Image */}
           <div className="w-full">
-            <img 
-              src="/JOINASWEBUILDTHEFUTURE.png" 
-              alt="Build the Future" 
-              className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
-            />
+            <FadeIn>
+              <img 
+                src="/JOINASWEBUILDTHEFUTURE.png" 
+                alt="Build the Future" 
+                className="w-full h-auto rounded-3xl object-cover drop-shadow-xl"
+              />
+            </FadeIn>
           </div>
           
           {/* Right side Content */}
           <div className="text-white">
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Join Us As We Build The Future</h2>
-            <p className="text-white/90 leading-relaxed text-[15px] md:text-base mb-10">
-              We're creating stories, experiences, platforms and intellectual property that inspire, connect and transform. Whether you're a creator, partner, investor, institution or innovator, we invite you to be part of the journey.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px]">
-                Partner With Us
-              </button>
-              <button className="bg-transparent border border-white/60 hover:border-white hover:bg-white/5 text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px]">
-                Explore Our Work
-              </button>
-            </div>
+            <SlideUp delay={0.1}>
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 leading-tight">Join Us As We Build The Future</h2>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <p className="text-white/90 leading-relaxed text-[15px] md:text-base mb-10">
+                We're creating stories, experiences, platforms and intellectual property that inspire, connect and transform. Whether you're a creator, partner, investor, institution or innovator, we invite you to be part of the journey.
+              </p>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <div className="flex flex-wrap gap-4">
+                <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px]">
+                  Partner With Us
+                </button>
+                <button className="bg-transparent border border-white/60 hover:border-white hover:bg-white/5 text-white px-8 py-3.5 rounded-lg font-medium transition-colors text-[15px]">
+                  Explore Our Work
+                </button>
+              </div>
+            </SlideUp>
           </div>
         </div>
       </div>
