@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
+import ScrollToTop from './components/layout/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import StoryWorlds from './pages/StoryWorlds'
@@ -15,6 +16,7 @@ import Partnership from './pages/Partnership'
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,7 +30,6 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/partnership" element={<Partnership />} />
         </Routes>
-
       </Layout>
     </BrowserRouter>
   )

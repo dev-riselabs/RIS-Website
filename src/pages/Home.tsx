@@ -27,34 +27,28 @@ const Home = () => {
       <div className="bg-surface min-h-screen pb-20">
         {/* Hero Section */}
         <div className="relative w-full text-white flex flex-col">
-          {/* Background Image containing the built-in arc */}
-          <img
-            src="/HERO_BG.png"
-            alt="Makemation Hero"
-            className="w-full h-full block"
-          />
-
-          {/* Gradient Overlay for better text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
-
-          {/* Watch Trailer - Centered in the upper half */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="pointer-events-auto">
-              <SlideUp delay={0.1} yOffset={20}>
-                <div className="flex items-center justify-center gap-6 mt-16 md:mt-0">
-                  <span className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase drop-shadow-md">Watch</span>
-                  <button className="hover:scale-105 transition-transform hover:opacity-80 drop-shadow-lg cursor-pointer">
-                    <PlayIcon />
-                  </button>
-                  <span className="text-xl md:text-2xl font-bold tracking-[0.2em] uppercase drop-shadow-md">Trailer</span>
-                </div>
-              </SlideUp>
+          {/* Background Video (YouTube) */}
+          <div className="w-full aspect-video overflow-hidden bg-black relative">
+            <iframe
+              src="https://www.youtube.com/embed/vMBzpy9mMHM?autoplay=1&mute=1&controls=1&loop=1&playlist=vMBzpy9mMHM&playsinline=1&rel=0&showinfo=0"
+              allow="autoplay; encrypted-media; fullscreen"
+              className="w-full  h-full"
+              style={{ border: 0 }}
+            />
+            {/* SVG Arc Overlay at the bottom */}
+            <div className="absolute bottom-0 left-0 w-full leading-none pointer-events-none">
+              <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-24 md:h-32 lg:h-48">
+                <path d="M0,0 Q720,200 1440,0 L1440,100 L0,100 Z" className="fill-surface" />
+              </svg>
             </div>
+            
+            {/* Gradient Overlay for better text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none"></div>
           </div>
 
-            {/* Title Area - Bottom left of the hero content */}
-            <div className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[30%] left-[10%]">
-              <SlideUp delay={0.2} yOffset={30}>
+          {/* Title Area - Bottom left of the hero content */}
+          <div className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[30%] left-[10%] pointer-events-none">
+            <SlideUp delay={0.2} yOffset={30}>
                 <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
               </SlideUp>
               <SlideUp delay={0.3} yOffset={30}>
