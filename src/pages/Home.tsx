@@ -24,11 +24,11 @@ const PlayIcon = () => (
 const Home = () => {
   return (
     <>
-      <div className="bg-surface min-h-screen pb-20">
+      <div className="bg-surface min-h-screen lg:pb-20">
         {/* Hero Section */}
         <div className="relative w-full text-white flex flex-col">
           {/* Background Video (YouTube) */}
-          <div className="w-full aspect-video overflow-hidden bg-black relative">
+          <div className="w-full h-[70vh] lg:h-[100vh] aspect-video overflow-hidden bg-black relative">
             <iframe
               src="https://www.youtube.com/embed/vMBzpy9mMHM?autoplay=1&mute=1&controls=1&loop=1&playlist=vMBzpy9mMHM&playsinline=1&rel=0&showinfo=0"
               allow="autoplay; encrypted-media; fullscreen"
