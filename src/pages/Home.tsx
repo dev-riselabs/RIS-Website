@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import SlideUp from '../components/animations/SlideUp'
 import FadeIn from '../components/animations/FadeIn'
 import Carousel from '../components/ui/Carousel'
@@ -21,19 +21,45 @@ const PlayIcon = () => (
   </svg>
 )
 
+const PauseIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white">
+    <circle cx="12" cy="12" r="10" strokeWidth="1.5" />
+    <rect x="9" y="8" width="2" height="8" fill="white" stroke="none" />
+    <rect x="13" y="8" width="2" height="8" fill="white" stroke="none" />
+  </svg>
+)
+
 const Home = () => {
+  const [isPlaying, setIsPlaying] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play().then(() => setIsPlaying(true)).catch(e => console.error("Playback failed", e))
+      } else {
+        videoRef.current.pause()
+        setIsPlaying(false)
+      }
+    }
+  }
+
   return (
     <>
       <div className="bg-surface min-h-screen lg:pb-20">
         {/* Hero Section */}
         <div className="relative w-full text-white flex flex-col">
-          {/* Background Video (YouTube) */}
+          {/* Background Video */}
           <div className="w-full h-[70vh] lg:h-[100vh] aspect-video overflow-hidden bg-black relative">
-            <iframe
-              src="https://www.youtube.com/embed/vMBzpy9mMHM?autoplay=1&mute=1&controls=1&loop=1&playlist=vMBzpy9mMHM&playsinline=1&rel=0&showinfo=0"
-              allow="autoplay; encrypted-media; fullscreen"
-              className="w-full  h-full"
-              style={{ border: 0 }}
+            <video
+              ref={videoRef}
+              src="/hero_video.mp4"
+              autoPlay
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             />
             {/* SVG Arc Overlay at the bottom */}
             <div className="absolute bottom-0 left-0 w-full leading-none pointer-events-none">
@@ -58,6 +84,17 @@ const Home = () => {
                 <p className="text-sm font-medium tracking-wide">On the air 18 . 04 . 25</p>
               </SlideUp>
             </div>
+
+          {/* Play/Pause Button */}
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+            <button 
+              onClick={togglePlay} 
+              className="hover:scale-110 transition-transform cursor-pointer drop-shadow-lg pointer-events-auto bg-black/20 hover:bg-black/40 rounded-full p-4"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+            >
+              {isPlaying ? <PauseIcon /> : <PlayIcon />}
+            </button>
+          </div>
           </div>
 
         <div className="-mt-16 md:-mt-30 lg:-mt-80 relative z-20">
