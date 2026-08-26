@@ -53,7 +53,6 @@ const MobileNavLink = ({ to, children, onClick, className }: { to: string, child
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

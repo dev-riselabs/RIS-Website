@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import SlideUp from '../components/animations/SlideUp'
 import FadeIn from '../components/animations/FadeIn'
 import Carousel from '../components/ui/Carousel'
@@ -236,7 +236,7 @@ const Home = () => {
                 pagination={{
                   el: '.custom-pagination',
                   clickable: true,
-                  renderBullet: function (index, className) {
+                  renderBullet: function (_index, className) {
                     return '<span class="' + className + ' custom-bullet"></span>';
                   },
                 }}

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import SlideUp from '../components/animations/SlideUp';
 import FadeIn from '../components/animations/FadeIn';
 import PageHero from '../components/ui/PageHero';

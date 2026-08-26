@@ -1,4 +1,4 @@
-import React from 'react'
+
 import SlideUp from '../components/animations/SlideUp'
 import FadeIn from '../components/animations/FadeIn'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -195,7 +195,7 @@ const Impact = () => {
                 pagination={{
                   el: '.impact-pagination',
                   clickable: true,
-                  renderBullet: function (index, className) {
+                  renderBullet: function (_index, className) {
                     return '<span class="' + className + ' custom-bullet"></span>';
                   },
                 }}
