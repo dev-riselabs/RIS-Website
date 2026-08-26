@@ -78,7 +78,7 @@ const Home = () => {
                 <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
               </SlideUp>
               <SlideUp delay={0.3} yOffset={30}>
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">Makemation</h1>
+                <h1 className="text-5xl md:text-6xl font-bold mb-4">Makemation</h1>
               </SlideUp>
               <SlideUp delay={0.4} yOffset={30}>
                 <p className="text-sm font-medium tracking-wide">On the air 18 . 04 . 25</p>
@@ -97,7 +97,7 @@ const Home = () => {
           </div>
           </div>
 
-        <div className="-mt-16 md:-mt-30 lg:-mt-80 relative z-20">
+        <div className="hero-carousel relative z-20">
           <Carousel>
             <ContentCard
               category="What we create"

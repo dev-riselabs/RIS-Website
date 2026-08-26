@@ -52,6 +52,22 @@ body {
   font-family: 'Jost', sans-serif;
 }
 
+.hero-carousel {
+  margin-top: calc(-14vh - 12px);
+}
+
+@media (min-width: 768px) {
+  .hero-carousel {
+    margin-top: calc(-21vh - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-carousel {
+    margin-top: calc(-40vh - 12px);
+  }
+}
+
 /* Custom Swiper Pagination for Featured Experiences */
 .custom-pagination {
   display: flex;

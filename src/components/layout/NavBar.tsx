@@ -89,7 +89,7 @@ const NavBar = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="xl:hidden p-2 text-white hover:text-primary transition-colors relative z-50" 
+          className="2xl:hidden p-2 text-white hover:text-primary transition-colors relative z-50" 
           onClick={toggleMenu} 
           aria-label="Toggle navigation"
         >
@@ -97,7 +97,7 @@ const NavBar = () => {
         </button>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden xl:flex space-x-6 2xl:space-x-8 items-center font-medium text-sm">
+        <ul className="hidden 2xl:flex space-x-6 2xl:space-x-8 items-center font-medium text-sm">
           <li>
             <NavLink to="/">Welcome</NavLink>
           </li>
@@ -165,7 +165,7 @@ const NavBar = () => {
 
       {/* Mobile Full-Screen Menu Overlay */}
       <div 
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-start transition-all duration-500 ease-in-out xl:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-start transition-all duration-500 ease-in-out 2xl:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
       >
         <ul className={`flex flex-col items-center justify-start w-full transform transition-all duration-700 ease-out delay-75 h-full overflow-y-auto pb-24 pt-20 px-4 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <div className="flex flex-col items-center space-y-6 w-full max-w-sm">
