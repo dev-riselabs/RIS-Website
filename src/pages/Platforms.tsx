@@ -54,7 +54,7 @@ const Platforms = () => {
       </div>
 
       {/* DeyMake Section */}
-      <div className="relative w-full overflow-hidden bg-surface pt-20 pb-">
+      <div id="deymake" className="relative w-full overflow-hidden bg-surface pt-20 scroll-mt-24">
         {/* Green SVG Background */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0 opacity-100">
           <svg width="100%" height="100%" viewBox="0 0 1440 1368" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">

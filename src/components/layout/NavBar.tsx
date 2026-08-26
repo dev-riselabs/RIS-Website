@@ -22,6 +22,35 @@ const CloseIcon = () => (
   </svg>
 )
 
+
+const CaretIcon = ({ active }: { active: boolean }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className={`${active ? 'text-primary' : 'text-white/40'} mr-1.5 shrink-0`}>
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+)
+
+const NavLink = ({ to, children, className }: { to: string, children: React.ReactNode, className?: string }) => {
+  const location = useLocation();
+  const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
+  return (
+    <Link to={to} className={className || `py-2 transition-all flex items-center ${isActive ? 'text-primary font-bold' : 'text-white hover:text-primary hover:opacity-80'}`}>
+      <CaretIcon active={isActive} />
+      {children}
+    </Link>
+  );
+};
+
+const MobileNavLink = ({ to, children, onClick, className }: { to: string, children: React.ReactNode, onClick: () => void, className?: string }) => {
+  const location = useLocation();
+  const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
+  return (
+    <Link to={to} className={className || `block text-2xl font-semibold tracking-wide transition-all duration-300 hover:scale-110 flex items-center justify-center ${isActive ? 'text-primary scale-110' : 'text-white hover:text-primary'}`} onClick={onClick}>
+      <CaretIcon active={isActive} />
+      {children}
+    </Link>
+  );
+};
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -46,15 +75,9 @@ const NavBar = () => {
     };
   }, [isOpen]);
 
-  const getLinkClass = (path: string, hasIcon: boolean = false) => {
-    const isActive = path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
-    return `py-2 transition-all ${hasIcon ? 'flex items-center' : 'block'} ${isActive ? 'text-primary font-bold' : 'text-white hover:text-primary hover:opacity-80'}`;
-  };
 
-  const getMobileLinkClass = (path: string) => {
-    const isActive = path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
-    return `block text-2xl font-semibold tracking-wide transition-all duration-300 hover:scale-110 ${isActive ? 'text-primary scale-110' : 'text-white hover:text-primary'}`;
-  };
+
+
 
   return (
     <nav className="absolute top-0 left-0 w-full z-50 text-white">
@@ -77,66 +100,66 @@ const NavBar = () => {
         {/* Desktop Navigation Links */}
         <ul className="hidden xl:flex space-x-6 2xl:space-x-8 items-center font-medium text-sm">
           <li>
-            <Link to="/" className={getLinkClass('/')}>Welcome</Link>
+            <NavLink to="/">Welcome</NavLink>
           </li>
           <li className="group relative">
-            <Link to="/about" className={getLinkClass('/about', true)}>About <ChevronDown /></Link>
+            <NavLink to="/about">About <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[200px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/about" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Our Story</Link>
-                <Link to="/about" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Vision</Link>
-                <Link to="/about" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Leadership</Link>
+                <Link to="/about#our-story" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Our Story</Link>
+                <Link to="/about#vision" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Vision</Link>
+                <Link to="/about#leadership" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Leadership</Link>
               </div>
             </div>
           </li>
           <li className="group relative">
-            <Link to="/story-worlds" className={getLinkClass('/story-worlds', true)}>Story Worlds <ChevronDown /></Link>
+            <NavLink to="/story-worlds">Story Worlds <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[220px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/story-worlds" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Films</Link>
-                <Link to="/story-worlds" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Books & Biographies</Link>
-                <Link to="/story-worlds" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Original Series</Link>
+                <Link to="/story-worlds#films" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Films</Link>
+                <Link to="/story-worlds#books" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Books & Biographies</Link>
+                <Link to="/story-worlds#series" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Original Series</Link>
               </div>
             </div>
           </li>
           <li className="group relative">
-            <Link to="/experiences" className={getLinkClass('/experiences', true)}>Experiences <ChevronDown /></Link>
+            <NavLink to="/experiences">Experiences <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[280px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/experiences" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation National AI Festival</Link>
-                <Link to="/experiences" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation UK–Nigerian AI Festival</Link>
-                <Link to="/experiences" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">AFRIFF AI Workshop & Cultural Dialogue</Link>
-                <Link to="/experiences" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Invest Lagos</Link>
-                <Link to="/experiences" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Humachines Making Films Challenge</Link>
+                <Link to="/experiences#makemation-national" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation National AI Festival</Link>
+                <Link to="/experiences#makemation-uk" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation UK–Nigerian AI Festival</Link>
+                <Link to="/experiences#afriff" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">AFRIFF AI Workshop & Cultural Dialogue</Link>
+                <Link to="/experiences#invest-lagos" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Invest Lagos</Link>
+                <Link to="/experiences#humachines" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Humachines Making Films Challenge</Link>
               </div>
             </div>
           </li>
           <li className="group relative">
-            <Link to="/platforms" className={getLinkClass('/platforms', true)}>Platforms <ChevronDown /></Link>
+            <NavLink to="/platforms">Platforms <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[200px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/platforms" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">DeyMake</Link>
+                <Link to="/platforms#deymake" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">DeyMake</Link>
               </div>
             </div>
           </li>
           <li className="group relative">
-            <Link to="/ai-creative-lab" className={getLinkClass('/ai-creative-lab', true)}>AI Creative Lab <ChevronDown /></Link>
+            <NavLink to="/ai-creative-lab">AI Creative Lab <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[220px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/ai-creative-lab" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Innovation</Link>
-                <Link to="/ai-creative-lab" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Creative Technology</Link>
-                <Link to="/ai-creative-lab" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">AI Storytelling</Link>
+                <Link to="/ai-creative-lab#innovation" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Innovation</Link>
+                <Link to="/ai-creative-lab#creative-technology" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Creative Technology</Link>
+                <Link to="/ai-creative-lab#ai-storytelling" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">AI Storytelling</Link>
               </div>
             </div>
           </li>
           <li>
-            <Link to="/impact" className={getLinkClass('/impact')}>Impact</Link>
+            <NavLink to="/impact">Impact</NavLink>
           </li>
           <li>
-            <Link to="/newsroom" className={getLinkClass('/newsroom')}>Newsroom</Link>
+            <NavLink to="/newsroom">Newsroom</NavLink>
           </li>
           <li>
-            <Link to="/contact" className={getLinkClass('/contact')}>Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
       </div>
@@ -148,62 +171,62 @@ const NavBar = () => {
         <ul className={`flex flex-col items-center justify-start w-full transform transition-all duration-700 ease-out delay-75 h-full overflow-y-auto pb-24 pt-20 px-4 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <div className="flex flex-col items-center space-y-6 w-full max-w-sm">
             <li>
-              <Link to="/" className={getMobileLinkClass('/')} onClick={closeMenu}>Welcome</Link>
+              <MobileNavLink to="/" onClick={closeMenu}>Welcome</MobileNavLink>
             </li>
             
             <li className="flex flex-col items-center w-full">
-              <Link to="/about" className={getMobileLinkClass('/about')} onClick={closeMenu}>About</Link>
+              <MobileNavLink to="/about" onClick={closeMenu}>About</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/about" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Our Story</Link>
-                <Link to="/about" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Vision</Link>
-                <Link to="/about" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Leadership</Link>
+                <Link to="/about#our-story" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Our Story</Link>
+                <Link to="/about#vision" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Vision</Link>
+                <Link to="/about#leadership" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Leadership</Link>
               </div>
             </li>
             
             <li className="flex flex-col items-center w-full">
-              <Link to="/story-worlds" className={getMobileLinkClass('/story-worlds')} onClick={closeMenu}>Story Worlds</Link>
+              <MobileNavLink to="/story-worlds" onClick={closeMenu}>Story Worlds</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/story-worlds" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Films</Link>
-                <Link to="/story-worlds" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Books & Biographies</Link>
-                <Link to="/story-worlds" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Original Series</Link>
+                <Link to="/story-worlds#films" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Films</Link>
+                <Link to="/story-worlds#books" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Books & Biographies</Link>
+                <Link to="/story-worlds#series" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Original Series</Link>
               </div>
             </li>
             
             <li className="flex flex-col items-center w-full">
-              <Link to="/experiences" className={getMobileLinkClass('/experiences')} onClick={closeMenu}>Experiences</Link>
+              <MobileNavLink to="/experiences" onClick={closeMenu}>Experiences</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/experiences" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation National AI Festival</Link>
-                <Link to="/experiences" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation UK–Nigerian AI Festival</Link>
-                <Link to="/experiences" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>AFRIFF AI Workshop</Link>
-                <Link to="/experiences" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Invest Lagos</Link>
-                <Link to="/experiences" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Humachines Challenge</Link>
+                <Link to="/experiences#makemation-national" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation National AI Festival</Link>
+                <Link to="/experiences#makemation-uk" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation UK–Nigerian AI Festival</Link>
+                <Link to="/experiences#afriff" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>AFRIFF AI Workshop</Link>
+                <Link to="/experiences#invest-lagos" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Invest Lagos</Link>
+                <Link to="/experiences#humachines" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Humachines Challenge</Link>
               </div>
             </li>
             
             <li className="flex flex-col items-center w-full">
-              <Link to="/platforms" className={getMobileLinkClass('/platforms')} onClick={closeMenu}>Platforms</Link>
+              <MobileNavLink to="/platforms" onClick={closeMenu}>Platforms</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/platforms" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>DeyMake</Link>
+                <Link to="/platforms#deymake" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>DeyMake</Link>
               </div>
             </li>
             
             <li className="flex flex-col items-center w-full">
-              <Link to="/ai-creative-lab" className={getMobileLinkClass('/ai-creative-lab')} onClick={closeMenu}>AI Creative Lab</Link>
+              <MobileNavLink to="/ai-creative-lab" onClick={closeMenu}>AI Creative Lab</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/ai-creative-lab" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Innovation</Link>
-                <Link to="/ai-creative-lab" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Creative Technology</Link>
-                <Link to="/ai-creative-lab" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>AI Storytelling</Link>
+                <Link to="/ai-creative-lab#innovation" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Innovation</Link>
+                <Link to="/ai-creative-lab#creative-technology" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Creative Technology</Link>
+                <Link to="/ai-creative-lab#ai-storytelling" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>AI Storytelling</Link>
               </div>
             </li>
             
             <li>
-              <Link to="/impact" className={getMobileLinkClass('/impact')} onClick={closeMenu}>Impact</Link>
+              <MobileNavLink to="/impact" onClick={closeMenu}>Impact</MobileNavLink>
             </li>
             <li>
-              <Link to="/newsroom" className={getMobileLinkClass('/newsroom')} onClick={closeMenu}>Newsroom</Link>
+              <MobileNavLink to="/newsroom" onClick={closeMenu}>Newsroom</MobileNavLink>
             </li>
             <li>
-              <Link to="/contact" className={getMobileLinkClass('/contact')} onClick={closeMenu}>Contact</Link>
+              <MobileNavLink to="/contact" onClick={closeMenu}>Contact</MobileNavLink>
             </li>
           </div>
         </ul>

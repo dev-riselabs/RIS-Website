@@ -62,18 +62,18 @@ const Home = () => {
               onPause={() => setIsPlaying(false)}
             />
             {/* SVG Arc Overlay at the bottom */}
-            <div className="absolute bottom-0 left-0 w-full leading-none pointer-events-none">
+            <div className="absolute bottom-0 left-0 w-full leading-none pointer-events-none z-10">
               <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-24 md:h-32 lg:h-48">
                 <path d="M0,0 Q720,200 1440,0 L1440,100 L0,100 Z" className="fill-surface" />
               </svg>
             </div>
-            
-            {/* Gradient Overlay for better text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none"></div>
+
+            {/* Dark Overlay for video */}
+            <div className="absolute inset-0 bg-[#000]/50 pointer-events-none"></div>
           </div>
 
           {/* Title Area - Bottom left of the hero content */}
-          <div className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[30%] left-[10%] pointer-events-none">
+          <div className="absolute bottom-[20%] md:bottom-[30%] lg:bottom-[40%] left-[10%] pointer-events-none">
             <SlideUp delay={0.2} yOffset={30}>
                 <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
               </SlideUp>

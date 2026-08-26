@@ -1,5 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
+
+const CaretIcon = ({ active }: { active: boolean }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className={`${active ? 'text-primary' : 'text-white/40'} mr-1.5 shrink-0`}>
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+)
+
+const FooterLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
+  const location = useLocation();
+  const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
+  return (
+    <Link to={to} className={`flex items-center hover:text-white transition-colors ${isActive ? 'text-primary font-bold' : ''}`}>
+      <CaretIcon active={isActive} />
+      {children}
+    </Link>
+  );
+};
 
 const Footer = () => {
   return (
@@ -45,17 +63,17 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <h3 className="font-bold text-lg text-white tracking-widest uppercase">MENU</h3>
             <div className="flex flex-col gap-3 text-[15px] text-white/80">
-              <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <Link to="/about" className="hover:text-white transition-colors">About</Link>
-              <Link to="/story-worlds" className="hover:text-white transition-colors">Story Worlds</Link>
-              <Link to="/experiences" className="hover:text-white transition-colors">Experiences</Link>
-              <Link to="/platforms" className="hover:text-white transition-colors">Platforms</Link>
-              <Link to="/ai-creative-lab" className="hover:text-white transition-colors">AI Creative Lab</Link>
-              <Link to="/impact" className="hover:text-white transition-colors">Impact</Link>
-              <Link to="/newsroom" className="hover:text-white transition-colors">Newsroom</Link>
-              <Link to="/collaborate" className="hover:text-white transition-colors">Collaborate</Link>
-              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <FooterLink to="/explore">Explore</FooterLink>
+              <FooterLink to="/">Home</FooterLink>
+              <FooterLink to="/about">About</FooterLink>
+              <FooterLink to="/story-worlds">Story Worlds</FooterLink>
+              <FooterLink to="/experiences">Experiences</FooterLink>
+              <FooterLink to="/platforms">Platforms</FooterLink>
+              <FooterLink to="/ai-creative-lab">AI Creative Lab</FooterLink>
+              <FooterLink to="/impact">Impact</FooterLink>
+              <FooterLink to="/newsroom">Newsroom</FooterLink>
+              <FooterLink to="/collaborate">Collaborate</FooterLink>
+              <FooterLink to="/contact">Contact</FooterLink>
             </div>
           </div>
 

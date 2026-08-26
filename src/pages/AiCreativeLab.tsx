@@ -17,7 +17,7 @@ const AiCreativeLab = () => {
       />
 
       {/* Our Philosophy Section */}
-      <div className="relative z-10 mx-[5%] md:mx-[10%] pt-20 pb-32">
+      <div id="innovation" className="relative z-10 mx-[5%] md:mx-[10%] pt-20 pb-32 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column (Image) */}
@@ -58,7 +58,7 @@ const AiCreativeLab = () => {
       </div>
 
       {/* Explore & Action Section */}
-      <div className="relative w-full overflow-hidden pb-32">
+      <div id="creative-technology" className="relative w-full overflow-hidden pb-32 scroll-mt-24">
         {/* Background SVG Curve */}
         <div className="absolute top-0 left-0 w-full z-0 opacity-100 pointer-events-none overflow-hidden h-full min-h-[1525px] max-w-full flex justify-start md:justify-center">
           <svg width="1440" height="1525" viewBox="0 0 1440 1525" fill="none" xmlns="http://www.w3.org/2000/svg" className="min-w-[1440px] w-full h-auto object-cover md:object-contain object-left-top md:object-top opacity-80">
@@ -245,7 +245,7 @@ const AiCreativeLab = () => {
       </div>
 
       {/* AI Initiatives Section */}
-      <div className="relative w-full overflow-hidden pb-32 pt-10">
+      <div id="ai-storytelling" className="relative w-full overflow-hidden pb-32 pt-10 scroll-mt-24">
         {/* Background SVG Curve */}
         <div className="absolute top-0 left-0 w-full z-0 opacity-100 pointer-events-none overflow-hidden h-full min-h-[1232px] max-w-full flex justify-end md:justify-center">
           <svg width="1440" height="1232" viewBox="0 0 1440 1232" fill="none" xmlns="http://www.w3.org/2000/svg" className="min-w-[1440px] w-full h-auto object-cover md:object-contain object-right-top md:object-top opacity-80">

@@ -59,7 +59,7 @@ const StoryWorlds = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="relative w-full overflow-hidden mt-32 pb-40">
+      <div id="films" className="relative w-full overflow-hidden mt-32 pb-40 scroll-mt-24">
         {/* Decorative Background SVG */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0 opacity-100">
           <svg width="100%" height="100%" viewBox="0 0 1440 1058" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -88,10 +88,11 @@ const StoryWorlds = () => {
               }
               image="/MAINMAKEMATION_IMG.png"
             />
-            <ContentCard
-              category="ORIGINAL SERIES"
-              title="Popular Jingo"
-              description={
+            <div id="series">
+              <ContentCard
+                category="ORIGINAL SERIES"
+                title="Popular Jingo"
+                description={
                 <div className="flex flex-col gap-4 text-[13px] text-white/80 leading-relaxed">
                   <div>
                     <span className="font-bold text-white">Format:</span> Podcast Series<br />
@@ -104,6 +105,7 @@ const StoryWorlds = () => {
               }
               image="/HERO_CAROUSEL_IMG.png"
             />
+            </div>
           </Carousel>
           <Carousel>
             <ContentCard
@@ -181,7 +183,7 @@ const StoryWorlds = () => {
           </div>
 
           {/* Approach Cards Slider */}
-          <div className="w-full relative mb-40">
+          <div id="books" className="w-full relative mb-40 scroll-mt-24">
             <Swiper
               modules={[Navigation]}
               spaceBetween={24}

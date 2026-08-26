@@ -21,7 +21,7 @@ const About = () => {
       />
 
       {/* Our Story Section */}
-      <div className="relative z-10 mx-[10%] pt-20">
+      <div id="our-story" className="relative z-10 mx-[10%] pt-20 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column (Image) */}
           <div className="w-full">
@@ -70,7 +70,7 @@ const About = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-[10%] pt-40 pb-20">
+        <div id="vision" className="relative z-10 mx-[10%] pt-40 pb-20 scroll-mt-24">
           
           {/* OUR VISION */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
@@ -304,7 +304,7 @@ const About = () => {
           </div>
 
           {/* LEADERSHIP */}
-          <div className="flex flex-col items-center text-center text-white mb-12">
+          <div id="leadership" className="flex flex-col items-center text-center text-white mb-12 scroll-mt-24">
             <SlideUp delay={0.1}>
               <p className="text-sm font-bold tracking-widest uppercase mb-4 text-white">LEADERSHIP</p>
             </SlideUp>
