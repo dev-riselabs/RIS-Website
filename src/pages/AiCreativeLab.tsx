@@ -123,8 +123,8 @@ const AiCreativeLab = () => {
                     img: "/AI_CONTENT_PRODUCTION.png"
                   }
                 ].map((item, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 h-full">
+                  <SwiperSlide key={idx} className="!h-auto flex flex-col">
+                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 flex-1 w-full">
                       <div className="w-full aspect-[4/3] bg-surface-mid relative">
                         <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
                       </div>
@@ -192,8 +192,8 @@ const AiCreativeLab = () => {
                     img: "/AI_EXPERIENCE_STORYTELLING.png"
                   }
                 ].map((item, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 h-full">
+                  <SwiperSlide key={idx} className="!h-auto flex flex-col">
+                    <div className="flex flex-col rounded-[20px] overflow-hidden border border-white/20 bg-transparent shadow-xl hover:-translate-y-1 transition-transform duration-300 flex-1 w-full">
                       <div className="w-full aspect-[4/3] bg-surface-mid relative">
                         <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
                       </div>

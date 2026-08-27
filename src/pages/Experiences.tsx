@@ -69,7 +69,30 @@ const Experiences = () => {
         </div>
 
         <div id="makemation-national" className="relative z-10 w-full pt-10 scroll-mt-24">
-          <Carousel>
+          <Carousel navPosition="bottom">
+            <ContentCard
+              category="FEATURED EXPERIENCES"
+              title="Makemation National Youth AI Festival"
+              description={
+                <div className="flex flex-col gap-4 text-[13px] text-white/80 leading-relaxed">
+                  <div>
+                    <span className="font-bold text-white">Status:</span> Upcoming<br/>
+                    <span className="font-bold text-white">Date:</span> 18 July 2026<br/>
+                    <span className="font-bold text-white">Format:</span> National Innovation & Future Skills Festival
+                  </div>
+                  <p>
+                    The Makemation National Youth AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills.
+                  </p>
+                  <p>
+                    Designed To Inspire The Next Generation Of Innovators, Creators And Problem-Solvers, The Festival Brings Together Students, Educators, Entrepreneurs, Industry Leaders And Policymakers To Explore How Emerging Technologies Can Help Shape Africa's Future.
+                  </p>
+                  <p>
+                    Inspired By The Makemation Story World, The Festival Extends The Impact Of Storytelling Into Real-World Learning, Innovation And Youth Empowerment. Registration: Aifest.Makemation.Com
+                  </p>
+                </div>
+              }
+              image="/FEATURED_IMG.png"
+            />
             <ContentCard
               category="FEATURED EXPERIENCES"
               title="Makemation National Youth AI Festival"

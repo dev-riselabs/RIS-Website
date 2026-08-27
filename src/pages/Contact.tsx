@@ -47,20 +47,20 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-white text-sm font-semibold">Full Name</label>
-                        <input type="text" placeholder="Your Name" className="bg-white/40 border border-transparent rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors" />
+                        <input type="text" placeholder="Your Name" className="bg-white/40 border border-transparent rounded-lg px-4 py-3  placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-white text-sm font-semibold">Email Address</label>
-                        <input type="email" placeholder="Email Address" className="bg-white/40 border border-transparent rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors" />
+                        <input type="email" placeholder="Email Address" className="bg-white/40 border border-transparent rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors" />
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-2 relative">
-                      <select className="bg-white/40 border border-transparent rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors">
-                        <option className="text-black">Story Worlds</option>
-                        <option className="text-black">Experiences</option>
-                        <option className="text-black">Platforms</option>
-                        <option className="text-black">AI Creative Lab</option>
+                      <select className="bg-white/40 border border-transparent rounded-lg px-4 py-3 appearance-none focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors [&>option]:text-black [&>option]:bg-white">
+                        <option value="Story Worlds">Story Worlds</option>
+                        <option value="Experiences">Experiences</option>
+                        <option value="Platforms">Platforms</option>
+                        <option value="AI Creative Lab">AI Creative Lab</option>
                       </select>
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white">
                         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6L10.5 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -68,10 +68,10 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col gap-2 relative">
-                      <select className="bg-white/40 border border-transparent rounded-lg px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors">
-                        <option className="text-black">Film Productions</option>
-                        <option className="text-black">Partnerships</option>
-                        <option className="text-black">General Enquiry</option>
+                      <select className="bg-white/40 border border-transparent rounded-lg px-4 py-3  appearance-none focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors [&>option]:text-black [&>option]:bg-white">
+                        <option value="Film Productions">Film Productions</option>
+                        <option value="Partnerships">Partnerships</option>
+                        <option value="General Enquiry">General Enquiry</option>
                       </select>
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white">
                         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6L10.5 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -80,7 +80,7 @@ const Contact = () => {
 
                     <div className="flex flex-col gap-2">
                       <label className="text-white text-sm font-semibold">Your Message</label>
-                      <textarea rows={5} placeholder="Please provide details for our team to evaluate..." className="bg-white/40 border border-transparent rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors resize-none"></textarea>
+                      <textarea rows={5} placeholder="Please provide details for our team to evaluate..." className="bg-white/40 border border-transparent rounded-lg px-4 py-3  placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-colors resize-none"></textarea>
                     </div>
 
                     <button type="submit" className="bg-[#44BB3D] hover:bg-[#3ca336] text-white font-medium py-4 rounded-lg transition-colors mt-2">

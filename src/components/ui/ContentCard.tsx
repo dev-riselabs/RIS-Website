@@ -25,7 +25,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
         
         <h3 className="text-4xl font-bold mb-4">{title}</h3>
         
-        <p className="text-text-secondary text-sm leading-relaxed mb-8">
+        <p className="text-text-secondary text-sm leading-relaxed mb-8 line-clamp-4">
           {description}
         </p>
         

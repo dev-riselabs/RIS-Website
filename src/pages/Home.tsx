@@ -75,7 +75,7 @@ const Home = () => {
           {/* Title Area - Bottom left of the hero content */}
           <div className="absolute bottom-[20%] md:bottom-[30%] lg:bottom-[40%] left-[10%] pointer-events-none">
             <SlideUp delay={0.2} yOffset={30}>
-                <p className="text-sm md:text-base font-medium tracking-wide mb-3">Africa’s first feature film on Artificial Intelligence & young people</p>
+                <p className="text-sm md:text-base font-medium tracking-wide mb-3">Africa's first feature film on AI</p>
               </SlideUp>
               <SlideUp delay={0.3} yOffset={30}>
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">Makemation</h1>
@@ -154,7 +154,7 @@ const Home = () => {
                 <Swiper
                   modules={[Navigation]}
                   spaceBetween={30}
-                  slidesPerView={2}
+                  slidesPerView={1}
                   navigation={{
                     prevEl: '.stories-prev',
                     nextEl: '.stories-next',
@@ -274,7 +274,7 @@ const Home = () => {
         </div>
       </div>
       {/* Humachines Creative Challenge Block */}
-      <div className="flex flex-col lg:flex-row gap-16 items-center  w-full  py-10 bg-surface">
+      <div className="flex flex-col lg:flex-row gap-16 items-center w-full px-6 md:px-12 lg:px-[10%] py-10 bg-surface">
 
         {/* Left Image */}
         <div className="flex-1 w-full relative flex justify-center items-center">
@@ -420,10 +420,10 @@ const Home = () => {
           </div>
 
           <div className="flex flex-col w-full">
-            <div className="w-full relative flex justify-between items-center mb-10">
-              <div className="flex-1"></div>
-              <p className="text-white/80 text-sm font-medium">Areas of Impact</p>
-              <div className="flex-1 hidden md:flex justify-end gap-4">
+            <div className="w-full relative flex justify-center lg:justify-between items-center mb-10">
+              <div className="hidden   lg:flex flex-1"></div>
+              <p className="text-white/80 text-sm font-medium text-center">Areas of Impact</p>
+              <div className="hidden lg:flex flex-1 justify-end gap-4">
                 <button className="impact-prev w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer disabled:opacity-50">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
                 </button>
@@ -432,7 +432,7 @@ const Home = () => {
                 </button>
               </div>
             </div>
-
+     
             {/* Carousel */}
             <div className="w-full relative">
               <Swiper

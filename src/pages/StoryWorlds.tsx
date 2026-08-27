@@ -86,7 +86,7 @@ const StoryWorlds = () => {
                   </p>
                 </div>
               }
-              image="/MAINMAKEMATION_IMG.png"
+              image="/MAKEMATION_IMG.png"
             />
             <div id="series">
               <ContentCard
@@ -103,7 +103,7 @@ const StoryWorlds = () => {
                   </p>
                 </div>
               }
-              image="/HERO_CAROUSEL_IMG.png"
+              image="/THE_FUTURE_IS_BRIGHT.png"
             />
             </div>
           </Carousel>
@@ -125,7 +125,7 @@ const StoryWorlds = () => {
                   </p>
                 </div>
               }
-              image="/MAINMAKEMATION_IMG.png"
+              image="/MAKEMATION_IMG.png"
             />
             <ContentCard
               category="ORIGINAL SERIES"
@@ -141,7 +141,7 @@ const StoryWorlds = () => {
                   </p>
                 </div>
               }
-              image="/HERO_CAROUSEL_IMG.png"
+              image="/THE_FUTURE_IS_BRIGHT.png"
             />
           </Carousel>
         </div>

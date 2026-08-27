@@ -1,23 +1,4 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-
-
-const CaretIcon = ({ active }: { active: boolean }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className={`${active ? 'text-primary' : 'text-white/40'} mr-1.5 shrink-0`}>
-    <path d="M8 5v14l11-7z"/>
-  </svg>
-)
-
-const FooterLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
-  const location = useLocation();
-  const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
-  return (
-    <Link to={to} className={`flex items-center hover:text-white transition-colors ${isActive ? 'text-primary font-bold' : ''}`}>
-      <CaretIcon active={isActive} />
-      {children}
-    </Link>
-  );
-};
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -42,94 +23,89 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-[10%] px-6 md:px-12 flex flex-col gap-20 ">
+      <div className="relative z-10 mx-[10%] px-6 md:px-12 flex flex-col gap-15 lg:gap-20 ">
         
-        {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-16 pb-8 w-full">
-          
-          {/* Column 1: Brand / Description */}
-          <div className="flex flex-col gap-4 items-start">
-            <div className="bg-white p-3 w-48 lg:w-56 rounded-sm shadow-md mb-2">
-              <img src="/RIS_LOGO.png" alt="Rise Interactive Studios Logo" className="w-full h-auto object-contain" />
+        {/* Top: Logo & Description */}
+        <div className="flex flex-col md:flex-row gap-6 items-start w-full pt-16">
+          <div className="w-full md:w-1/4 lg:w-1/6 shrink-0">
+            <div className="bg-white p-2 inline-block rounded-sm shadow-md">
+              <img src="/RIS_LOGO.png" alt="Rise Interactive Studios Logo" className="h-16 md:h-20 object-contain" />
             </div>
-            <h3 className="font-bold text-lg text-white tracking-widest uppercase">RISE INTERACTIVE STUDIOS</h3>
-            <p className="text-white/80 text-[15px] leading-relaxed mt-1">
-              Building Africa's Future Media Ecosystem.<br/>
-              Stories, Experiences, Platforms, Innovation.
+          </div>
+          <div className="w-full pt-2">
+            <p className="text-white text-[14px] md:text-[15px] leading-relaxed">
+              Rise Interactive Studios is an AI Native creative innovation and futuristic media company whose work is at the centre point of Film, Music, Culture and Technology. We produce world-class intellectual property content and experiences by creating market-generating platforms and blending data and storytelling that amplify voices, inspire action, drive social impact, empower communities and influence policy to strengthen Africa's position as a leader in the global creative economy.
             </p>
           </div>
+        </div>
 
-          {/* Column 2: Menu */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-lg text-white tracking-widest uppercase">MENU</h3>
-            <div className="flex flex-col gap-3 text-[15px] text-white/80">
-              <FooterLink to="/explore">Explore</FooterLink>
-              <FooterLink to="/">Home</FooterLink>
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/story-worlds">Story Worlds</FooterLink>
-              <FooterLink to="/experiences">Experiences</FooterLink>
-              <FooterLink to="/platforms">Platforms</FooterLink>
-              <FooterLink to="/ai-creative-lab">AI Creative Lab</FooterLink>
-              <FooterLink to="/impact">Impact</FooterLink>
-              <FooterLink to="/newsroom">Newsroom</FooterLink>
-              <FooterLink to="/collaborate">Collaborate</FooterLink>
-              <FooterLink to="/contact">Contact</FooterLink>
+        {/* Quick Links */}
+        <div className="flex flex-col gap-6">
+          <h3 className="font-bold text-white text-[16px]">Quick Links</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-8 gap-x-6">
+            <div className="flex flex-col gap-3 text-white/80 text-[14px]">
+              <Link to="/" className="hover:text-white transition-colors">Welcome</Link>
+              <Link to="/about" className="hover:text-white transition-colors">Our Story</Link>
+              <Link to="/vision" className="hover:text-white transition-colors">Vision</Link>
+              <Link to="/leadership" className="hover:text-white transition-colors">Leadership</Link>
+            </div>
+            <div className="flex flex-col gap-3 text-white/80 text-[14px]">
+              <Link to="/original-series" className="hover:text-white transition-colors">Original Series</Link>
+              <Link to="/films" className="hover:text-white transition-colors">Films</Link>
+              <Link to="/books" className="hover:text-white transition-colors">Books & Biographies</Link>
+              <Link to="/deymake" className="hover:text-white transition-colors">DeyMake</Link>
+            </div>
+            <div className="flex flex-col gap-3 text-white/80 text-[14px]">
+              <Link to="/original-series" className="hover:text-white transition-colors">Original Series</Link>
+              <Link to="/innovation" className="hover:text-white transition-colors">Innovation</Link>
+              <Link to="/creative-tech" className="hover:text-white transition-colors">Creative Technology</Link>
+              <Link to="/ai-storytelling" className="hover:text-white transition-colors">AI Storytelling</Link>
+            </div>
+            <div className="flex flex-col gap-3 text-white/80 text-[14px]">
+              <Link to="/makemation-national" className="hover:text-white transition-colors">Makemation National AI Festiva</Link>
+              <Link to="/makemation-uk" className="hover:text-white transition-colors">Makemation UK–Nigerian AI Festival</Link>
+              <Link to="/invest-lagos" className="hover:text-white transition-colors">Invest Lagos</Link>
+              <Link to="/humachines" className="hover:text-white transition-colors">Humachines Making Films Challenge</Link>
+            </div>
+            <div className="flex flex-col gap-3 text-white/80 text-[14px]">
+              <Link to="/ai-storytelling" className="hover:text-white transition-colors">AI Storytelling</Link>
+              <Link to="/newsroom" className="hover:text-white transition-colors">Newsroom</Link>
+              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
+        </div>
 
-          {/* Column 3: Connect */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-lg text-white tracking-widest uppercase">CONNECT</h3>
-            <div className="flex flex-col gap-4 text-[15px] text-white/80">
-              <a href="#" className="flex items-center gap-3 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                Instagram
-              </a>
-              <a href="#" className="flex items-center gap-3 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                LinkedIn
-              </a>
-              <a href="#" className="flex items-center gap-3 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-                YouTube
-              </a>
-              <a href="#" className="flex items-center gap-3 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                Facebook
-              </a>
-              <a href="#" className="flex items-center gap-3 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-                X
-              </a>
-            </div>
-          </div>
-
-          {/* Column 4: Stay Connected */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-lg text-white tracking-widest uppercase">STAY CONNECTED</h3>
-            <p className="text-white/80 text-[15px] leading-relaxed">
-              Subscribe for updates on new Story Worlds, Experiences, creator opportunities and innovation initiatives.
+        {/* Get in Touch & Socials */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+          <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-white text-[16px]">Get in touch</h3>
+            <p className="text-white/80 text-[14px]">
+              Information & Partnerships: <a href="mailto:we@riseinteractivestudios.com" className="hover:text-white transition-colors">we@riseinteractivestudios.com</a>
             </p>
-            <form className="flex flex-col gap-4 mt-2 w-full" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="bg-transparent border border-white/30 text-white placeholder:text-white/50 px-4 py-3 focus:outline-none focus:border-white transition-colors w-full rounded-sm"
-                required
-              />
-              <button 
-                type="submit" 
-                className="bg-white text-[#052C6F] font-bold px-4 py-3 hover:bg-gray-100 transition-colors w-full text-center rounded-sm"
-              >
-                Subscribe
-              </button>
-            </form>
           </div>
-
+          <div className="flex items-center gap-4 text-white/80">
+            <a href="#" className="hover:text-white transition-colors" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" className="hover:text-white transition-colors" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" className="hover:text-white transition-colors" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-start items-center border-t border-white/20 pt-8 pb-4 text-[13px] text-white/60 w-full">
+        <div className="flex flex-col gap-3 text-[13px] text-white/80 pb-8">
+          <div className="flex flex-wrap gap-4 mb-1">
+            <Link to="/terms" className="hover:text-white underline underline-offset-2">Terms and Conditions</Link>
+            <Link to="/privacy" className="hover:text-white underline underline-offset-2">Privacy Policy</Link>
+            <Link to="/accessibility" className="hover:text-white underline underline-offset-2">Accessibility Policy</Link>
+          </div>
           <p>© 2026 Rise Interactive Studios. All Rights Reserved.</p>
         </div>
       </div>
