@@ -75,7 +75,7 @@ const Home = () => {
           {/* Title Area - Bottom left of the hero content */}
           <div className="absolute bottom-[20%] md:bottom-[30%] lg:bottom-[40%] left-[10%] pointer-events-none">
             <SlideUp delay={0.2} yOffset={30}>
-                <p className="text-sm md:text-base font-medium tracking-wide mb-3">First African Feature Film</p>
+                <p className="text-sm md:text-base font-medium tracking-wide mb-3">Africa’s first feature film on Artificial Intelligence & young people</p>
               </SlideUp>
               <SlideUp delay={0.3} yOffset={30}>
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">Makemation</h1>
@@ -114,8 +114,8 @@ const Home = () => {
             />
             <ContentCard
               category="Featured Experiences"
-              title="Makemation National AI Festival"
-              description="The Makemation National AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills. Designed To Inspire The Next Generation Of Innovators, Creators And Problem-Solvers, The Festival Brings Together Students, Educators, Entrepreneurs, Industry Leaders And Policymakers To Explore How Emerging Technologies Can Help Shape Africa's Future."
+              title="Makemation National Youth AI Festival"
+              description="The Makemation National Youth AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills. Designed To Inspire The Next Generation Of Innovators, Creators And Problem-Solvers, The Festival Brings Together Students, Educators, Entrepreneurs, Industry Leaders And Policymakers To Explore How Emerging Technologies Can Help Shape Africa's Future."
               image="/HERO_CAROUSEL_IMG.png"
             />
           </Carousel>
@@ -244,7 +244,7 @@ const Home = () => {
               >
                 <SwiperSlide>
                   <ExperienceCard
-                    title="Makemation National AI Festival"
+                    title="Makemation National Youth AI Festival"
                     description="Africa's Pioneering AI-Inspired Storytelling Franchise Driving Conversations Around Innovation, Education And The Future Of Work."
                     image="/MAINMAKEMATION_IMG.png"
                   />

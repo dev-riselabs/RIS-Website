@@ -72,7 +72,7 @@ const Experiences = () => {
           <Carousel>
             <ContentCard
               category="FEATURED EXPERIENCES"
-              title="Makemation National AI Festival"
+              title="Makemation National Youth AI Festival"
               description={
                 <div className="flex flex-col gap-4 text-[13px] text-white/80 leading-relaxed">
                   <div>
@@ -81,7 +81,7 @@ const Experiences = () => {
                     <span className="font-bold text-white">Format:</span> National Innovation & Future Skills Festival
                   </div>
                   <p>
-                    The Makemation National AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills.
+                    The Makemation National Youth AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills.
                   </p>
                   <p>
                     Designed To Inspire The Next Generation Of Innovators, Creators And Problem-Solvers, The Festival Brings Together Students, Educators, Entrepreneurs, Industry Leaders And Policymakers To Explore How Emerging Technologies Can Help Shape Africa's Future.

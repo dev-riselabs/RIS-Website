@@ -189,7 +189,7 @@ const Partnership = () => {
               </SlideUp>
               <SlideUp delay={0.3}>
                 <p className="text-white/90 text-[15px] md:text-base leading-relaxed">
-                  Through programmes such as the Makemation National AI Festival, the Makemation UK-Nigerian AI Festival, the AFRIFF AI Workshop & Cultural Dialogue and future learning initiatives, we collaborate with educators, researchers, mentors and innovation leaders who share our passion for empowering young people.
+                  Through programmes such as the Makemation National Youth AI Festival, the Makemation UK-Nigerian AI Festival, the AFRIFF AI Workshop & Cultural Dialogue and future learning initiatives, we collaborate with educators, researchers, mentors and innovation leaders who share our passion for empowering young people.
                 </p>
               </SlideUp>
             </div>

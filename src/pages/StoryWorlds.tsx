@@ -82,7 +82,7 @@ const StoryWorlds = () => {
                     Makemation Is A Pioneering African Story World Exploring The Relationship Between Artificial Intelligence, Innovation, Creativity And Future Skills.
                   </p>
                   <p>
-                    What Began As A Feature Film Has Evolved Into A Broader Ecosystem That Includes Educational Engagement, Youth Innovation Initiatives And The Makemation National AI Festival, Inspiring Young People To Imagine And Build The Future.
+                    What Began As A Feature Film Has Evolved Into A Broader Ecosystem That Includes Educational Engagement, Youth Innovation Initiatives And The Makemation National Youth AI Festival, Inspiring Young People To Imagine And Build The Future.
                   </p>
                 </div>
               }
@@ -121,7 +121,7 @@ const StoryWorlds = () => {
                     Makemation Is A Pioneering African Story World Exploring The Relationship Between Artificial Intelligence, Innovation, Creativity And Future Skills.
                   </p>
                   <p>
-                    What Began As A Feature Film Has Evolved Into A Broader Ecosystem That Includes Educational Engagement, Youth Innovation Initiatives And The Makemation National AI Festival, Inspiring Young People To Imagine And Build The Future.
+                    What Began As A Feature Film Has Evolved Into A Broader Ecosystem That Includes Educational Engagement, Youth Innovation Initiatives And The Makemation National Youth AI Festival, Inspiring Young People To Imagine And Build The Future.
                   </p>
                 </div>
               }
