@@ -80,9 +80,9 @@ const Home = () => {
               <SlideUp delay={0.3} yOffset={30}>
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">Makemation</h1>
               </SlideUp>
-              {/* <SlideUp delay={0.4} yOffset={30}>
-                <p className="text-sm font-medium tracking-wide">On the air 18 . 04 . 25</p>
-              </SlideUp> */}
+              <SlideUp delay={0.4} yOffset={30}>
+                <p className="text-sm font-medium tracking-wide"></p>
+              </SlideUp>
             </div>
 
           {/* Play/Pause Button */}
