@@ -148,7 +148,8 @@ const About = () => {
               title="Popular Jingo"
               description="Hosted By Toyosi Akerele-Ogunsiji, Popular Jingo Features Engaging Conversations With Leaders, Innovators, Creators And Changemakers Exploring Ideas, Opportunities And The Forces Shaping Africa And The World. Through Thoughtful Dialogue And Diverse Perspectives, The Series Creates A Space For Learning, Reflection And Meaningful Conversation."
               buttonText="View episodes"
-              image="/HERO_CAROUSEL_IMG.png"
+              // image="/HERO_CAROUSEL_IMG.png"
+              image="/HERO_CAROUSEL_IMG.jpeg"
             />
           </Carousel>
         </div>

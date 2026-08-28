@@ -104,19 +104,22 @@ const Home = () => {
               title="Productions"
               description="Creating films, documentaries, original series and screen-based stories that entertain, inspire and drive conversations."
               buttonText="View slate"
-              image="/HERO_CAROUSEL_IMG.png"
+              // image="/HERO_CAROUSEL_IMG.png"
+              image="/HERO_CAROUSEL_IMG.jpeg"
             />
             <ContentCard
               category="Original Series"
               title="Popular Jingo"
               description="Hosted By Toyosi Akerele-Ogunsiji, Popular Jingo Features Engaging Conversations With Leaders, Innovators, Creators And Changemakers Exploring Ideas, Opportunities And The Forces Shaping Africa And The World. Through Thoughtful Dialogue And Diverse Perspectives, The Series Creates A Space For Learning, Reflection And Meaningful Conversation."
-              image="/HERO_CAROUSEL_IMG.png"
+              // image="/HERO_CAROUSEL_IMG.png"
+              image="/HERO_CAROUSEL_IMG.jpeg"
             />
             <ContentCard
               category="Featured Experiences"
               title="Makemation National Youth AI Festivals"
               description="The Makemation National Youth AI Festival Is A Nationwide Movement Introducing Young People To Artificial Intelligence, Creativity, Innovation And Future Skills. Designed To Inspire The Next Generation Of Innovators, Creators And Problem-Solvers, The Festival Brings Together Students, Educators, Entrepreneurs, Industry Leaders And Policymakers To Explore How Emerging Technologies Can Help Shape Africa's Future."
-              image="/HERO_CAROUSEL_IMG.png"
+              // image="/HERO_CAROUSEL_IMG.png"
+              image="/HERO_CAROUSEL_IMG.jpeg"
             />
           </Carousel>
         </div>
@@ -175,7 +178,8 @@ const Home = () => {
                   </SwiperSlide>
                   <SwiperSlide>
                     <VerticalPosterCard
-                      image="/HERO_CAROUSEL_IMG.png"
+                      // image="/HERO_CAROUSEL_IMG.png"
+                      image="/HERO_CAROUSEL_IMG.jpeg"
                       footerText="Coming Soon"
                     />
                   </SwiperSlide>
@@ -253,14 +257,16 @@ const Home = () => {
                   <ExperienceCard
                     title="Rise Interactive Forums"
                     description="Connecting innovators and creators."
-                    image="/HERO_CAROUSEL_IMG.png"
+                    // image="/HERO_CAROUSEL_IMG.png"
+                    image="/HERO_CAROUSEL_IMG.jpeg"
                   />
                 </SwiperSlide>
                 <SwiperSlide>
                   <ExperienceCard
                     title="Creator Workshops"
                     description="Empowering the next generation of storytellers."
-                    image="/HERO_CAROUSEL_IMG.png"
+                    // image="/HERO_CAROUSEL_IMG.png"
+                    image="/HERO_CAROUSEL_IMG.jpeg"
                   />
                 </SwiperSlide>
               </Swiper>
