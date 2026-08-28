@@ -125,7 +125,7 @@ const NavBar = () => {
             <NavLink to="/experiences">Experiences <ChevronDown /></NavLink>
             <div className="absolute left-0 top-full pt-4 transition-all duration-300 opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[280px]">
               <div className="rounded-xl bg-white py-2 shadow-xl ring-1 ring-black/5 flex flex-col overflow-hidden">
-                <Link to="/experiences#makemation-national" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation National Youth AI Festival</Link>
+                <Link to="/experiences#makemation-national" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation National Youth AI Festivals</Link>
                 <Link to="/experiences#makemation-uk" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Makemation UK–Nigerian AI Festival</Link>
                 <Link to="/experiences#afriff" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">AFRIFF AI Workshop & Cultural Dialogue</Link>
                 <Link to="/experiences#invest-lagos" className="px-5 py-2.5 text-sm font-medium text-[#111827] hover:bg-[#f3f4f6] hover:text-primary transition-colors">Invest Lagos</Link>
@@ -194,7 +194,7 @@ const NavBar = () => {
             <li className="flex flex-col items-center w-full">
               <MobileNavLink to="/experiences" onClick={closeMenu}>Experiences</MobileNavLink>
               <div className="flex flex-col items-center space-y-3 mt-3 w-full bg-white/5 rounded-xl py-3">
-                <Link to="/experiences#makemation-national" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation National Youth AI Festival</Link>
+                <Link to="/experiences#makemation-national" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation National Youth AI Festivals</Link>
                 <Link to="/experiences#makemation-uk" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Makemation UK–Nigerian AI Festival</Link>
                 <Link to="/experiences#afriff" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>AFRIFF AI Workshop</Link>
                 <Link to="/experiences#invest-lagos" className="text-white/80 text-sm font-medium hover:text-white" onClick={closeMenu}>Invest Lagos</Link>

@@ -72,7 +72,7 @@ const Experiences = () => {
           <Carousel navPosition="bottom">
             <ContentCard
               category="FEATURED EXPERIENCES"
-              title="Makemation National Youth AI Festival"
+              title="Makemation National Youth AI Festivals"
               description={
                 <div className="flex flex-col gap-4 text-[13px] text-white/80 leading-relaxed">
                   <div>
@@ -95,7 +95,7 @@ const Experiences = () => {
             />
             <ContentCard
               category="FEATURED EXPERIENCES"
-              title="Makemation National Youth AI Festival"
+              title="Makemation National Youth AI Festivals"
               description={
                 <div className="flex flex-col gap-4 text-[13px] text-white/80 leading-relaxed">
                   <div>
