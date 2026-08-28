@@ -141,7 +141,8 @@ const About = () => {
               title="Productions"
               description="Films, documentaries, series and screen-based storytelling experiences."
               buttonText="View slate"
-              image="/AWOLOWO_IMG.png"
+              // image="/AWOLOWO_IMG.png"
+              image="/HERO_CAROUSEL_IMG.jpeg"
             />
             <ContentCard
               category="Original Series"
@@ -293,7 +294,11 @@ const About = () => {
             <div className="flex flex-col">
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <VerticalPosterCard image="/MAKEMATION_IMG.png" footerText="Makemation" />
-                <VerticalPosterCard image="/AWOLOWO_IMG.png" footerText="AWO" />
+                {/* <VerticalPosterCard image="/AWOLOWO_IMG.png" footerText="AWO" /> */}
+                <VerticalPosterCard 
+                // image="/AWOLOWO_IMG.png" 
+                image="/HERO_CAROUSEL_IMG.jpeg"
+                footerText="AWO" />
               </div>
               <div className="text-white">
                 <h3 className="text-xl font-bold mb-4">Building Connections Across Stories, Experiences and Communities</h3>

@@ -172,7 +172,8 @@ const Home = () => {
                   </SwiperSlide>
                   <SwiperSlide>
                     <VerticalPosterCard
-                      image="/AWOLOWO_IMG.png"
+                      // image="/AWOLOWO_IMG.png"
+                      image="/HERO_CAROUSEL_IMG.jpeg"
                       footerText="Currently in Development"
                     />
                   </SwiperSlide>
